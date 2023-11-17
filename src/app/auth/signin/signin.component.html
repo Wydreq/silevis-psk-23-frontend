@@ -1,0 +1,21 @@
+<div class="container">
+  <form
+    class="formContainer"
+    [formGroup]="signInForm"
+    (ngSubmit)="signInHandler()"
+  >
+    <h1>Zaloguj się!</h1>
+    <mat-form-field>
+      <mat-label>Adres email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="signInForm.invalid"
+    >
+      Zaloguj
+    </button>
+  </form>
+</div>
