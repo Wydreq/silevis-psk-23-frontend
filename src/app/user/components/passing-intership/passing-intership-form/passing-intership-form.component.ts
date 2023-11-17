@@ -5,7 +5,7 @@ import {
   IPassFormValues,
 } from 'src/app/user/interfaces/form.interfaces';
 import { jsPDF } from 'jspdf';
-import { xd } from 'src/app/user/templates/passing-intership-pdf';
+import { traineeApplication } from 'src/app/user/templates/passing-intership-pdf';
 import htmlToPdfmake from 'html-to-pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import pdfMake from 'pdfmake/build/pdfmake';
@@ -31,14 +31,14 @@ export class PassingIntershipFormComponent {
   ) {
     console.log(attestationFormValues);
     console.log(this.passFormValues);
-    this.generatePDF();
+    this.generatePDF(this.passFormValues);
   }
 
-  generatePDF() {
+  generatePDF(attestationFormValues: IPassFormValues) {
     // Utwórz nowy obiekt jsPDF
     const pdf = new jsPDF();
 
-    var html = htmlToPdfmake(xd);
+    var html = htmlToPdfmake(traineeApplication(attestationFormValues));
     // Dodaj treść do pliku PDF
     const documentDefinition = { content: html };
     pdfMake.createPdf(documentDefinition).open();
