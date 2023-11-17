@@ -4,6 +4,12 @@ import {
   IAttestationFormValues,
   IPassFormValues,
 } from 'src/app/user/interfaces/form.interfaces';
+import { jsPDF } from 'jspdf';
+import { xd } from 'src/app/user/templates/passing-intership-pdf';
+import htmlToPdfmake from 'html-to-pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+import pdfMake from 'pdfmake/build/pdfmake';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
   selector: 'app-passing-intership-form',
@@ -25,6 +31,19 @@ export class PassingIntershipFormComponent {
   ) {
     console.log(attestationFormValues);
     console.log(this.passFormValues);
+    this.generatePDF();
+  }
+
+  generatePDF() {
+    // Utwórz nowy obiekt jsPDF
+    const pdf = new jsPDF();
+
+    var html = htmlToPdfmake(xd);
+    // Dodaj treść do pliku PDF
+    const documentDefinition = { content: html };
+    pdfMake.createPdf(documentDefinition).open();
+
+    // Zapisz plik PDF
   }
 
   toggleNextActive() {
