@@ -15,8 +15,6 @@ export class PassingIntershipFormComponent {
   protected nextActive = false;
   protected attestationForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
-
   protected passSubmitHandler(formValue: IPassFormValues) {
     this.nextActive = true;
     this.passFormValues = formValue;
