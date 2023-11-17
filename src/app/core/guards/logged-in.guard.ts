@@ -29,7 +29,7 @@ export class LoggedInGuard implements CanActivate {
         if (!isAuth) {
           return true;
         }
-        return this.router.createUrlTree(['/']);
+        return this.router.createUrlTree(['/student']);
       })
     );
   }
