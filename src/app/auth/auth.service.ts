@@ -29,4 +29,10 @@ export class AuthService {
       this.user.next(user);
     }
   }
+
+  logout() {
+    localStorage.removeItem('userData');
+    this.user.next(null);
+    this.router.navigate(['/auth']);
+  }
 }
