@@ -2,3 +2,15 @@ mat-form-field,
 button {
   width: 100%;
 }
+form {
+  width: 100%;
+}
+.formContainer {
+  display: flex;
+  justify-content: center;
+}
+.formItem {
+  width: 50%;
+  margin-right: 30px;
+  margin: 20px 20px;
+}
