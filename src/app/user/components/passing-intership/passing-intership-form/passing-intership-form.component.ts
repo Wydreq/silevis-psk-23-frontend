@@ -9,6 +9,7 @@ import { traineeApplication } from 'src/app/user/templates/passing-intership-pdf
 import htmlToPdfmake from 'html-to-pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import pdfMake from 'pdfmake/build/pdfmake';
+import { cerificateInternship } from 'src/app/user/templates/certificate-internship-pdf';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -31,19 +32,28 @@ export class PassingIntershipFormComponent {
   ) {
     console.log(attestationFormValues);
     console.log(this.passFormValues);
-    this.generatePDF(this.passFormValues);
+    this.generatePDF(this.passFormValues, attestationFormValues);
   }
 
-  generatePDF(attestationFormValues: IPassFormValues) {
+  generatePDF(
+    passFormValues: IPassFormValues,
+    attestationFormValues: IAttestationFormValues
+  ) {
     // Utwórz nowy obiekt jsPDF
     const pdf = new jsPDF();
 
-    var html = htmlToPdfmake(traineeApplication(attestationFormValues));
+    const html = htmlToPdfmake(traineeApplication(passFormValues));
+    const certificate = htmlToPdfmake(
+      cerificateInternship(attestationFormValues)
+    );
     // Dodaj treść do pliku PDF
     const documentDefinition = { content: html };
-    pdfMake.createPdf(documentDefinition).open();
+    pdfMake.createPdf(documentDefinition).download();
 
     // Zapisz plik PDF
+
+    const documentDefinition2 = { content: certificate };
+    pdfMake.createPdf(documentDefinition2).download();
   }
 
   toggleNextActive() {
