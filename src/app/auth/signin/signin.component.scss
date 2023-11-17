@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  .formContainer {
+    min-width: 40vw;
+    min-height: 400px;
+    background-color: #ffedd5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    mat-form-field {
+      width: 50%;
+    }
+
+    button {
+      width: 50%;
+    }
+  }
+}
