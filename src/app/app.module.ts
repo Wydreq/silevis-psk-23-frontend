@@ -28,6 +28,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

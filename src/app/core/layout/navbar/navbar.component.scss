@@ -1,11 +1,16 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.navbar {
+  border-bottom: 4px solid var(--orange);
+}
+
 .logo {
   height: 60px;
 }
 .navbar {
-  background-color: var(--green);
+  background-color: white;
   width: 100vw;
   z-index: 100;
 }
@@ -59,7 +64,6 @@ mat-sidenav-content {
 }
 
 .dropdown-content {
-  display: none;
   position: absolute;
 
   background-color: white;
