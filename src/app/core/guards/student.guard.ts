@@ -28,7 +28,7 @@ export class StudentGuard implements CanActivate {
         if (user?.studentNumber) {
           return true;
         }
-        return this.router.createUrlTree(['/']);
+        return this.router.createUrlTree(['/supervisor']);
       })
     );
   }
