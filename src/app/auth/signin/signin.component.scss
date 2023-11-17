@@ -6,9 +6,10 @@
   height: 100vh;
 
   .formContainer {
+    transform: translateY(-25%);
     min-width: 40vw;
-    min-height: 400px;
-    background-color: #ffedd5;
+    min-height: 340px;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;

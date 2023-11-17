@@ -40,6 +40,7 @@ import { ColorByStateDirective } from './directives/color-by-state.directive';
     MatMenuModule,
     MatSelectModule,
     ColorByStateDirective,
+    FlexLayoutModule,
   ],
   providers: [
     {
