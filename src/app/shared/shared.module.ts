@@ -31,7 +31,6 @@ import { MatMenuModule } from '@angular/material/menu';
     MatNativeDateModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-
     MatSidenavModule,
     MatMenuModule,
   ],

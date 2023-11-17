@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .box {
+    padding: 50px 30px;
+    background-color: #ffedd5;
+
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid crimson;
+    border-radius: 5px;
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+
+      button {
+        margin-top: 15px;
+      }
+    }
+  }
+}
