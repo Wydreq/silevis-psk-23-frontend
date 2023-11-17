@@ -17,5 +17,6 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
     },
     { provide: MAT_DIALOG_DATA, useValue: {} },
   ],
+
 })
 export class CoreModule {}
