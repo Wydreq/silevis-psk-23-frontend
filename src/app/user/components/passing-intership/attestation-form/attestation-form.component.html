@@ -1,0 +1,73 @@
+<form [formGroup]="attestationForm" (ngSubmit)="submitHandler()">
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label
+        >Nazwa instytucji/zakładu, w której pracuje/pracował student:</mat-label
+      >
+      <input matInput placeholder="Placeholder" formControlName="companyName" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Adres</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        formControlName="companyAddress"
+      />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Profil działalności</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        formControlName="companyProfile"
+      />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Stanowisko studenta w czasie pracy</mat-label>
+      <input matInput placeholder="Placeholder" formControlName="workStation" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Czas pracy</mat-label>
+      <input matInput placeholder="Placeholder" formControlName="workTime" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Zakres obowiązków studenta w czasie pracy </mat-label>
+      <textarea
+        formControlName="practicesBase"
+        formControlName="studentResponsibilities"
+        matInput
+      ></textarea>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>
+        Dane osoby, która może poświadczyć prawdziwość powyższych danych
+        (prezes, dyrektor, Koordynator Programu Badawczego/Erasmusa, itp.) wraz
+        z podpisem
+      </mat-label>
+      <input
+        formControlName="studentSuperviser"
+        matInput
+        placeholder="Placeholder"
+      />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Uwagi </mat-label>
+      <textarea formControlName="comments" matInput></textarea>
+    </mat-form-field>
+  </p>
+  <button type="submit" mat-flat-button color="warn">Submit</button>
+</form>

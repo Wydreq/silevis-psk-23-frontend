@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Fill data</h1>
+
+  <div class="form">
+    <ng-container
+      [ngTemplateOutlet]="nextActive ? secondFormTemplate : firstFormTemplate"
+    ></ng-container>
+  </div>
+</div>
+
+<ng-template #firstFormTemplate>
+  <app-pass-form (passFormSubmitHandle)="passSubmitHandler($event)" />
+</ng-template>
+
+<ng-template #secondFormTemplate
+  ><app-attestation-form
+    (attestationFormSubmitHandler)="attestationSubmitHandler($event)"
+  />
+</ng-template>

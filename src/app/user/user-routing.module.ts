@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user.component';
-import { PassingIntershipFormComponent } from './components/passing-intership-form/passing-intership-form.component';
+import { PassingIntershipFormComponent } from './components/passing-intership/passing-intership-form/passing-intership-form.component';
 
 const routes: Routes = [
   {
