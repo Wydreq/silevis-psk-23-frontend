@@ -19,8 +19,10 @@
         >{{ user.firstName }} {{ user.lastName }}</a
       >
       <div class="dropdown-content">
-        <a routerLink="//history">222</a>
-        <a routerLink="//dashboard">333d</a>
+        <a [routerLink]="['/student']">Podanie o praktykę</a>
+        <a [routerLink]="['/student/passing-intership']"
+          >Podanie o zaliczenie praktyki</a
+        >
       </div>
     </div>
     <a *ngIf="user" (click)="logoutHandler()">Logout</a>
