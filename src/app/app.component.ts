@@ -8,7 +8,6 @@ import { AuthService } from './auth/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-
 export class AppComponent implements OnInit {
   constructor(
     private translate: TranslateService,
@@ -16,10 +15,12 @@ export class AppComponent implements OnInit {
     private authService: AuthService
   ) {
     this.translate.setDefaultLang('pl');
+    this.translate.use('pl');
   }
 
   ngOnInit(): void {
     this.authService.autoLogin();
+    console.log(this.translate.currentLang);
+    this.translate.use('en');
   }
 }
-

@@ -4,7 +4,7 @@
     [formGroup]="signInForm"
     (ngSubmit)="signInHandler()"
   >
-    <h1>Zaloguj się!</h1>
+    <h1>{{ "sign" | translate }}</h1>
     <mat-form-field>
       <mat-label>Adres email</mat-label>
       <input matInput formControlName="email" />
