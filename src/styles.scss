@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+  --mat-sidenav-content-background-color: #818181;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #818181;
+}
+:root {
+  --orange: #ef7a1b;
+  --red: #c92130;
+  --green: #006b42;
+}
