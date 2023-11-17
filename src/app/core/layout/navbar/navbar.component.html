@@ -14,13 +14,18 @@
   /></a>
   <span class="example-spacer"></span>
   <div class="linksContainer">
-    <div class="dropdown">
-      <a routerLink="/" class="dropbtn">111</a>
+    <div *ngIf="user" class="dropdown">
+      <a routerLink="/" class="dropbtn"
+        >{{ user.firstName }} {{ user.lastName }}</a
+      >
       <div class="dropdown-content">
-        <a routerLink="//history">222</a>
-        <a routerLink="//dashboard">333d</a>
+        <a [routerLink]="['/student']">Podanie o praktykę</a>
+        <a [routerLink]="['/student/passing-intership']"
+          >Podanie o zaliczenie praktyki</a
+        >
       </div>
     </div>
+    <a *ngIf="user" (click)="logoutHandler()">Logout</a>
   </div>
 </mat-toolbar>
 <mat-sidenav-container fxFlexFill class="example-container">
