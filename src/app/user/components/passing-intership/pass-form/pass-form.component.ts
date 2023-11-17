@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { IPassFormValues } from 'src/app/user/interfaces/form.interfaces';
+import { jsPDF } from 'jspdf';
 
 @Component({
   selector: 'app-pass-form',
