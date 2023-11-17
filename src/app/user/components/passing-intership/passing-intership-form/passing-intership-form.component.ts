@@ -48,12 +48,14 @@ export class PassingIntershipFormComponent {
     );
     // Dodaj treść do pliku PDF
     const documentDefinition = { content: html };
+
     pdfMake.createPdf(documentDefinition).download();
 
     // Zapisz plik PDF
-
-    const documentDefinition2 = { content: certificate };
-    pdfMake.createPdf(documentDefinition2).download();
+    setTimeout(() => {
+      const documentDefinition2 = { content: certificate };
+      pdfMake.createPdf(documentDefinition2).download();
+    }, 200);
   }
 
   toggleNextActive() {
