@@ -20,7 +20,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { ColorByStateDirective } from './directives/color-by-state.directive';
 
-
 @NgModule({
   declarations: [ColorByStateDirective],
   imports: [CommonModule],
@@ -40,6 +39,7 @@ import { ColorByStateDirective } from './directives/color-by-state.directive';
     MatSidenavModule,
     MatMenuModule,
     MatSelectModule,
+    ColorByStateDirective,
   ],
   providers: [
     {
@@ -51,7 +51,6 @@ import { ColorByStateDirective } from './directives/color-by-state.directive';
     MatSidenavModule,
     MatMenuModule,
     ColorByStateDirective,
-
   ],
 })
 export class SharedModule {}
