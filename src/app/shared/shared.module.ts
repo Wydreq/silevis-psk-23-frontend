@@ -19,9 +19,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { ColorByStateDirective } from './directives/color-by-state.directive';
-
+import { SwitchLanguageComponent } from './components/switch-language/switch-language.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 @NgModule({
-  declarations: [ColorByStateDirective],
+  declarations: [ColorByStateDirective, SwitchLanguageComponent],
   imports: [CommonModule],
   exports: [
     MatToolbarModule,
@@ -41,6 +42,8 @@ import { ColorByStateDirective } from './directives/color-by-state.directive';
     MatSelectModule,
     ColorByStateDirective,
     FlexLayoutModule,
+    MatButtonToggleModule,
+    SwitchLanguageComponent,
   ],
   providers: [
     {
