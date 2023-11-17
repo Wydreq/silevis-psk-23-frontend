@@ -10,12 +10,12 @@ const routes: Routes = [
   {
     path: 'student',
     loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
-    canActivate: [StudentGuard, AuthGuard],
+    // canActivate: [StudentGuard, AuthGuard],
   },
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
-    canActivate: [LoggedInGuard],
+    // canActivate: [LoggedInGuard],
   },
   {
     path: 'supervisor',
@@ -23,7 +23,7 @@ const routes: Routes = [
       import('./super-vision/super-vision.module').then(
         (m) => m.SuperVisionModule
       ),
-    canActivate: [SupervisorGuard, AuthGuard],
+    // canActivate: [SupervisorGuard, AuthGuard],
   },
 ];
 

@@ -20,6 +20,7 @@ export class PassFormComponent implements OnInit {
     studentStatus: 1,
     email: 's022222@student.tu.kielce.pl',
     studentNumber: '22222',
+    traineeManager: 'somesome',
     studentProgrammes: [
       {
         id: '1',
@@ -48,6 +49,7 @@ export class PassFormComponent implements OnInit {
       deputyDean: [''],
       academicYear: [],
       practicesBase: [''],
+      traineeManager: [''],
     });
   }
 }

@@ -8,6 +8,7 @@ export interface IPassFormValues {
   deputyDean: string;
   academicYear: string;
   practicesBase: string;
+  traineeManager: string;
 }
 export interface IAttestationFormValues {
   destination: string;
