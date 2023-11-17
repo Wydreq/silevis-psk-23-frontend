@@ -11,12 +11,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { ColorByStateDirective } from './directives/color-by-state.directive';
 
 @NgModule({
-  declarations: [],
+  declarations: [ColorByStateDirective],
   imports: [CommonModule],
   exports: [
     MatToolbarModule,
@@ -31,9 +32,10 @@ import { MatMenuModule } from '@angular/material/menu';
     MatNativeDateModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-
+    FlexLayoutModule,
     MatSidenavModule,
     MatMenuModule,
+    ColorByStateDirective,
   ],
 })
 export class SharedModule {}

@@ -1,0 +1,18 @@
+p {
+  text-align: center;
+  margin-bottom: 24px;
+}
+h1 {
+  text-align: center;
+}
+.container {
+  min-width: 240px;
+  max-width: 360px;
+  padding: 20px;
+}
+.mdc-dialog__actions {
+  padding: 0;
+}
+.mat-mdc-dialog-actions {
+  justify-content: center;
+}

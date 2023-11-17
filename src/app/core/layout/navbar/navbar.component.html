@@ -1,0 +1,50 @@
+<mat-toolbar class="navbar">
+  <div fxShow="true" fxHide.gt-sm="true">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <a routerLink="/" class="logohref"
+    ><img src="/assets/images/logo_psk.jpg" alt="logo" class="logo"
+  /></a>
+  <span class="example-spacer"></span>
+  <div class="linksContainer">
+    <div class="dropdown">
+      <a routerLink="/" class="dropbtn">111</a>
+      <div class="dropdown-content">
+        <a routerLink="//history">222</a>
+        <a routerLink="//dashboard">333d</a>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container fxFlexFill class="example-container">
+  <mat-sidenav
+    color="primary"
+    #sidenav
+    fxLayout="column"
+    mode="over"
+    opened="false"
+    fxHide.gt-sm="true"
+  >
+    <div fxLayout="column" class="linksContainer sidebar">
+      <ng-container>
+        <div class="dropdown">
+          <a routerLink="/player-panel" class="dropbtn">2222</a>
+          <div class="dropdown-content">
+            <a routerLink="/player-panel/history">3</a>
+            <a routerLink="/player-panel/dashboard">Dashboard</a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content fxFlexFill>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
