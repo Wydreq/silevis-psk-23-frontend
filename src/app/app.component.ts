@@ -8,6 +8,7 @@ import { AuthService } from './auth/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
+
 export class AppComponent implements OnInit {
   constructor(
     private translate: TranslateService,
@@ -21,3 +22,4 @@ export class AppComponent implements OnInit {
     this.authService.autoLogin();
   }
 }
+
