@@ -10,6 +10,7 @@ import { ErrorHandlingInterceptor } from './core/interceptors/error-handling.int
 import { CoreModule } from './core/core.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AllInterceptors } from './core/interceptors/all-interceptors';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -34,13 +35,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
   ],
 
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      multi: true,
-      useClass: ErrorHandlingInterceptor,
-    },
-  ],
+  providers: [...AllInterceptors],
 
   bootstrap: [AppComponent],
 })
