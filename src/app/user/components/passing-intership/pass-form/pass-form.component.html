@@ -1,4 +1,5 @@
 <form [formGroup]="passForm">
+
   <p>
     <mat-form-field>
       <mat-label>Kierunek studiów</mat-label>
@@ -68,5 +69,68 @@
     </mat-form-field>
   </p>
 
-  <button (click)="submitHandler()" mat-flat-button color="warn">Next</button>
+  <div class="formContainer">
+    <div class="formItem">
+      <p>
+        <mat-form-field>
+          <mat-label>Kierunek studiów</mat-label>
+          <mat-select
+            *ngFor="let programme of userMock.studentProgrammes"
+            formControlName="programme"
+          >
+            <mat-option [value]="programme.id">{{
+              programme.programme
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <mat-label>Forma studiów</mat-label>
+          <mat-select formControlName="studiesForm">
+            <mat-option value="zaoczne">Zaoczne</mat-option>
+            <mat-option value="stacjonarne">Stacjonarne</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Rok studiów</mat-label>
+          <input type="number" formControlName="year" matInput />
+        </mat-form-field>
+      </p>
+    </div>
+    <div class="formItem">
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Prodziekan wydziału</mat-label>
+          <input formControlName="deputyDean" matInput />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Rok akademicki</mat-label>
+          <input formControlName="academicYear" matInput />
+        </mat-form-field>
+      </p>
+
+
+      <p>
+        <mat-form-field>
+          <mat-label
+            >Podaj podstawe praktyki (na podstawie (wpisać jedną z sytuacji
+            określoną w § 6 ust. 10 Regulaminu praktyk zawodowych) )
+          </mat-label>
+          <textarea formControlName="practicesBase" matInput></textarea>
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+  <button
+    (click)="submitHandler()"
+    mat-flat-button
+    style="background-color: #ef7a1b"
+  >
+    Next
+  </button>
 </form>
