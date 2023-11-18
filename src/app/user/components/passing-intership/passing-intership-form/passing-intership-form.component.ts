@@ -10,6 +10,7 @@ import htmlToPdfmake from 'html-to-pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import pdfMake from 'pdfmake/build/pdfmake';
 import { cerificateInternship } from 'src/app/user/templates/certificate-internship-pdf';
+import { contractInternship } from 'src/app/user/templates/contract-internship-pdf';
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -40,13 +41,11 @@ export class PassingIntershipFormComponent {
     passFormValues: IPassFormValues,
     attestationFormValues: IAttestationFormValues
   ) {
-    // Utwórz nowy obiekt jsPDF
-
     const html = htmlToPdfmake(traineeApplication(passFormValues));
     const certificate = htmlToPdfmake(
       cerificateInternship(attestationFormValues)
     );
-    // Dodaj treść do pliku PDF
+
     const documentDefinition = {
       content: html,
     };

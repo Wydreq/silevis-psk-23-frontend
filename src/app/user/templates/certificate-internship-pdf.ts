@@ -11,7 +11,7 @@ export function cerificateInternship({
   studentSuperviser,
 }: IAttestationFormValues) {
   return `
-    <h1 style="text-align: center"> Zaświadczenie </h1>
+    <h1 style="text-align: center; " > Zaświadczenie </h1>
     <ol>
     <li> <b> Cel Wystawienia: </b> zaliczenie praktyki studenckiej </li>
      <li> <b> Imię i nazwisko studenta: </b> ${fullName} </li>

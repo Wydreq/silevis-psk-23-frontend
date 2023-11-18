@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CompanyService } from '../../services/company.service';
+import htmlToPdfmake from 'html-to-pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+import pdfMake from 'pdfmake/build/pdfmake';
+import { contractInternship } from '../../templates/contract-internship-pdf';
+import { UserService } from 'src/app/core/user.service';
 
 @Component({
   selector: 'app-application-for-intern-form',
@@ -9,14 +15,19 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ApplicationForInternFormComponent implements OnInit {
   protected applicationForm: FormGroup;
 
+  constructor(
+    private companyService: CompanyService,
+    private userService: UserService
+  ) {}
+
   ngOnInit(): void {
     this.applicationForm = new FormGroup({
       agreementDate: new FormControl(null, Validators.required),
       department: new FormControl(null, Validators.required),
       company: new FormGroup({
         companyName: new FormControl(null, Validators.required),
-        companyCity: new FormControl(null, Validators.required),
-        companyStreet: new FormControl(null, Validators.required),
+        address: new FormControl(null, Validators.required),
+
         krs: new FormControl(null, Validators.required),
         nip: new FormControl(null, [
           Validators.required,
@@ -42,6 +53,43 @@ export class ApplicationForInternFormComponent implements OnInit {
         ]),
       }),
     });
+  }
+
+  get controls() {
+    return this.applicationForm.controls;
+  }
+
+  get companyControls() {
+    return (this.controls['company'] as FormGroup).controls;
+  }
+  getCompanyByNip() {
+    this.companyService
+      .getCompany(this.companyControls['nip'].value)
+      .subscribe((res: any) => {
+        console.log(res);
+        this.companyControls['regon'].setValue(res['regon']);
+        this.companyControls['krs'].setValue(res['krs']);
+        this.companyControls['companyName'].setValue(res['name']);
+        this.companyControls['address'].setValue(res['workingAddress']);
+        this.companyControls['companyRepresentedBy'].setValue(
+          `${res['representatives'][0].firstName} ${res['representatives'][0].lastName}`
+        );
+      });
+  }
+
+  generatePDF(passFormValues: any, attestationFormValues: any) {
+    const html = htmlToPdfmake(
+      contractInternship(
+        this.applicationForm.value,
+        this.userService.user.getValue()
+      )
+    );
+
+    const documentDefinition = {
+      content: html, ///htm
+    };
+
+    pdfMake.createPdf(documentDefinition).download('zalacznikNr4.pdf');
   }
 
   submitHandler() {}
