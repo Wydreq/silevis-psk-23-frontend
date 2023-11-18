@@ -25,7 +25,7 @@ export class SupervisorGuard implements CanActivate {
     | Observable<boolean | UrlTree> {
     return this.userService.user.pipe(
       map((user) => {
-        if (!user?.studentNumber) {
+        if (user?.staffStatus === 2) {
           return true;
         }
         return this.router.createUrlTree(['/student']);
