@@ -15,6 +15,12 @@ export function traineeApplication({
   traineeManager,
 }: IPassFormValues) {
   return `
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 <div style="display:flex; width:100vw; justify-content: flex-end; text-align: right">
     <div style="width:50px;  font-weight: bold">
         <div>Załącznik nr 4 do Zarządzenia Nr 54/19
@@ -88,5 +94,6 @@ Podpis………………………………….
 Podpis………………………………….
  </li>
  </ul>
+ </html>
 `;
 }

@@ -9,7 +9,6 @@ import htmlToPdfmake from 'html-to-pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import pdfMake from 'pdfmake/build/pdfmake';
 import { cerificateInternship } from 'src/app/user/templates/certificate-internship-pdf';
-import { contractInternship } from 'src/app/user/templates/contract-internship-pdf';
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -72,6 +71,22 @@ export class PassingIntershipFormComponent {
       const documentDefinition2 = { content: certificate };
       pdfMake.createPdf(documentDefinition2).download('zaswiadczenie.pdf');
     }, 600);
+  }
+
+  printPDF(attestationFormValues: IAttestationFormValues) {
+    const html = htmlToPdfmake(
+      traineeApplication(this.passFormValues) +
+        cerificateInternship(attestationFormValues)
+    );
+
+    const documentDefinition = {
+      content: html,
+      defaultStyle: {
+        font: 'times',
+      },
+    };
+
+    pdfMake.createPdf(documentDefinition).print();
   }
 
   toggleNextActive() {
