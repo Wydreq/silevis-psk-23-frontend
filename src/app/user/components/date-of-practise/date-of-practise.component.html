@@ -1,0 +1,38 @@
+<form (ngSubmit)="newRange()" [formGroup]="range">
+  <h1>Prośba o zmianę terminu praktyk:</h1>
+  <h2>
+    Aktualna data terminu praktyk:
+    <span style="color: var(--orange)"
+      >{{ "2023-11-07T23:00:00.000Z" | date }} -
+      {{ "2023-11-22T23:00:00.000Z" | date }}
+    </span>
+  </h2>
+
+  <h2 style="color: var(--orange)">Nowy termin:</h2>
+  <mat-form-field>
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate formControlName="start" placeholder="Start date" />
+      <input matEndDate formControlName="end" placeholder="End date" />
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+
+    <mat-error *ngIf="range.get('start')?.hasError('matStartDateInvalid')"
+      >Invalid start date</mat-error
+    >
+    <mat-error *ngIf="range.get('end')?.hasError('matEndDateInvalid')"
+      >Invalid end date</mat-error
+    >
+  </mat-form-field>
+
+  <button
+    type="submit"
+    style="background-color: #fc9c41"
+    mat-button
+    [disabled]="range.invalid"
+  >
+    Poproś o nowy termin
+  </button>
+</form>
