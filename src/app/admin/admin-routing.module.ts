@@ -5,6 +5,11 @@ import { IntershipDatesComponent } from './components/intership-dates/intership-
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'students-list',
+    pathMatch: 'full',
+  },
+  {
     path: 'students-list',
     component: StudentsTableComponent,
     pathMatch: 'full',

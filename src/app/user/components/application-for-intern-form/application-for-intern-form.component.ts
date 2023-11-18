@@ -66,13 +66,20 @@ export class ApplicationForInternFormComponent implements OnInit {
     this.companyService
       .getCompany(this.companyControls['nip'].value)
       .subscribe((res: any) => {
-        console.log(res);
-        this.companyControls['regon'].setValue(res['regon']);
-        this.companyControls['krs'].setValue(res['krs']);
-        this.companyControls['companyName'].setValue(res['name']);
-        this.companyControls['address'].setValue(res['workingAddress']);
+        this.companyControls['regon'].setValue(res['regon'] || '');
+        this.companyControls['krs'].setValue(res['krs'] || '');
+        this.companyControls['companyName'].setValue(res['name'] || '');
+        this.companyControls['address'].setValue(res['workingAddress'] || '');
         this.companyControls['companyRepresentedBy'].setValue(
-          `${res['representatives'][0].firstName} ${res['representatives'][0].lastName}`
+          `${
+            res['representatives'][0]
+              ? res['representatives'][0].firstName || ''
+              : ''
+          } ${
+            res['representatives'][0]
+              ? res['representatives'][0].lastName || ''
+              : ''
+          }`
         );
       });
   }
