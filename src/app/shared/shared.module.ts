@@ -24,12 +24,13 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
-
+import { MatBadgeModule } from '@angular/material/badge';
 @NgModule({
   declarations: [ColorByStateDirective, SwitchLanguageComponent],
   imports: [CommonModule],
   exports: [
     MatToolbarModule,
+    MatBadgeModule,
     MatIconModule,
     MatButtonModule,
     MatListModule,

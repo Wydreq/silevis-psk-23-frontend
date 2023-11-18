@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StudentsTableComponent } from './components/students-table/students-table.component';
 import { IntershipDatesComponent } from './components/intership-dates/intership-dates.component';
+import { RequestNewDatesComponent } from './components/request-new-dates/request-new-dates.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
   {
     path: 'interships-dates',
     component: IntershipDatesComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'request-new-dates',
+    component: RequestNewDatesComponent,
     pathMatch: 'full',
   },
 ];

@@ -10,6 +10,7 @@ import { AddInteshipDateModalComponent } from './components/add-inteship-date-mo
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { AddNewStudentFormComponent } from './components/students-table/add-new-student-form/add-new-student-form.component';
+import { RequestNewDatesComponent } from './components/request-new-dates/request-new-dates.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,6 @@ import { AddNewStudentFormComponent } from './components/students-table/add-new-
     StudentsTableComponent,
     IntershipDatesComponent,
     AddInteshipDateModalComponent,
-    AddNewStudentFormComponent,
   ],
   imports: [
     CommonModule,
