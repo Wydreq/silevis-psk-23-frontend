@@ -1,0 +1,11 @@
+.switch {
+  padding: 15px;
+  background-color: var(--orange);
+  border-radius: 2px;
+  color: white;
+  border: none;
+  &:hover {
+    opacity: 0.95;
+    cursor: pointer;
+  }
+}
