@@ -1,0 +1,56 @@
+<div class="dialogContainer" [formGroup]="dates">
+  <h1 mat-dialog-title>Add new practise date</h1>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input formGroupName="range" [rangePicker]="picker">
+        <input matStartDate formControlName="start" placeholder="Start date" />
+        <input matEndDate formControlName="end" placeholder="End date" />
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+
+      <mat-error
+        *ngIf="
+          dates['controls'].range.controls.start.hasError('matStartDateInvalid')
+        "
+        >Invalid start date</mat-error
+      >
+      <mat-error
+        *ngIf="
+          dates['controls'].range.controls.end.hasError('matEndDateInvalid')
+        "
+        >Invalid end date</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker2"
+        formControlName="requestEndDate"
+      />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker2"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="controls">
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button
+      style="background-color: #fc9c41"
+      mat-button
+      [mat-dialog-close]="dates"
+      cdkFocusInitial
+    >
+      Ok
+    </button>
+  </div>
+</div>

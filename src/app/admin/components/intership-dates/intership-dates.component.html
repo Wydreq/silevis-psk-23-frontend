@@ -1,0 +1,39 @@
+<div class="demo-button-container">
+  <button mat-raised-button class="demo-button" (click)="openDialog()">
+    Add data
+  </button>
+  <button
+    (click)="removeData()"
+    mat-raised-button
+    [disabled]="!dataToDisplay.length"
+    class="demo-button"
+  >
+    Remove data
+  </button>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+  <!-- Position Column -->
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="startDate">
+    <th mat-header-cell *matHeaderCellDef>Data rozpoczęcia praktyk</th>
+    <td mat-cell *matCellDef="let element">{{ element.startDate | date }}</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="endDate">
+    <th mat-header-cell *matHeaderCellDef>Data zakończenia praktyk</th>
+    <td mat-cell *matCellDef="let element">{{ element.endDate | date }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="requestEndDate">
+    <th mat-header-cell *matHeaderCellDef>Data zakończenia zgłoszeń</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.requestEndDate | date }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

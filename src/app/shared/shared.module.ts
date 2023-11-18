@@ -21,6 +21,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { ColorByStateDirective } from './directives/color-by-state.directive';
 import { SwitchLanguageComponent } from './components/switch-language/switch-language.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+
 @NgModule({
   declarations: [ColorByStateDirective, SwitchLanguageComponent],
   imports: [CommonModule],
@@ -44,6 +48,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     FlexLayoutModule,
     MatButtonToggleModule,
     SwitchLanguageComponent,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [
     {

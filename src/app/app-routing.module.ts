@@ -18,6 +18,11 @@ const routes: Routes = [
     canActivate: [LoggedInGuard],
   },
   {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
     path: 'supervisor',
     loadChildren: () =>
       import('./super-vision/super-vision.module').then(

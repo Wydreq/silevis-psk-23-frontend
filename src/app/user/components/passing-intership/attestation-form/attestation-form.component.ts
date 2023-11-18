@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IAttestationFormValues } from 'src/app/user/interfaces/form.interfaces';
 
 @Component({
@@ -42,13 +42,13 @@ export class AttestationFormComponent implements OnInit {
     this.attestationForm = this.formBuilder.group({
       destination: 'zaliczenie praktyki studenckiej',
       fullName: `${this.userMock.firstName} ${this.userMock.lastName} `,
-      companyName: [''],
-      companyAddress: [''],
-      companyProfile: [''],
-      workStation: [''],
-      workTime: [],
-      studentResponsibilities: [''],
-      studentSuperviser: [''],
+      companyName: ['', Validators.required],
+      companyAddress: ['', Validators.required],
+      companyProfile: ['', Validators.required],
+      workStation: ['', Validators.required],
+      workTime: [, Validators.required],
+      studentResponsibilities: ['', Validators.required],
+      studentSuperviser: ['', Validators.required],
       comments: [''],
     });
   }
