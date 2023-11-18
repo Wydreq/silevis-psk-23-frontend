@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CompanyService } from '../../services/company.service';
+import htmlToPdfmake from 'html-to-pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+import pdfMake from 'pdfmake/build/pdfmake';
+import { contractInternship } from '../../templates/contract-internship-pdf';
+import { UserService } from 'src/app/core/user.service';
 
 @Component({
   selector: 'app-application-for-intern-form',
@@ -10,7 +15,10 @@ import { CompanyService } from '../../services/company.service';
 export class ApplicationForInternFormComponent implements OnInit {
   protected applicationForm: FormGroup;
 
-  constructor(private companyService: CompanyService) {}
+  constructor(
+    private companyService: CompanyService,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.applicationForm = new FormGroup({
@@ -64,6 +72,21 @@ export class ApplicationForInternFormComponent implements OnInit {
           `${res['representatives'][0].firstName} ${res['representatives'][0].lastName}`
         );
       });
+  }
+
+  generatePDF(passFormValues: any, attestationFormValues: any) {
+    const html = htmlToPdfmake(
+      contractInternship(
+        this.applicationForm.value,
+        this.userService.user.getValue()
+      )
+    );
+
+    const documentDefinition = {
+      content: html, ///htm
+    };
+
+    pdfMake.createPdf(documentDefinition).download('zalacznikNr4.pdf');
   }
 
   submitHandler() {}

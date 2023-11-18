@@ -1,4 +1,6 @@
-export function contractInternship() {
+import { IUser } from 'src/app/shared/interface/user.interface';
+
+export function contractInternship(formValues: any, user: IUser | null) {
   return `<div style="margin:0;display:flex; width:100vw; justify-content: flex-end; text-align: right">
     <div style="width:50px;  font-weight: bold; font-size:10px;">
         <div>Załącznik nr 1 do Zarządzenia Nr 54/19
@@ -12,14 +14,14 @@ export function contractInternship() {
     </div>
 
     <div style="text-align:left; font-size:13px">
-        <div>zawarta w dniu ........................................ r. pomiędzy:</div>
+        <div>zawarta w dniu DATA r. pomiędzy:</div>
        <span><b>Politechniką Świętokrzyską</b> al. Tysiąclecia Państwa Polskiego 7, 25-314 Kielce </span> 
        <span>zwaną dalej <b>Uczelnią, </b>  reprezentowaną na podstawie udzielonego przez Rektora Uczelni </span>
        <span> pełnomocnictwa, przez Dziekana Wydziału …………………………………       </span>
        <span>a </span>
-       <span>………………………………..……. z siedzibą w ……………. ul. ………………………….,</span>
-       <span>o nr KRS ………….…, NIP ……………………, Regon ……………………, zwanym dalej</span>
-       <span><b>Zakładem</b> lub <b>Zakładem Pracy</b>, reprezentowanym przez ……………………………………</span>
+       <span>${formValues.companyName} z siedzibą w ${formValues.address},</span>
+       <span>o nr KRS ${formValues.krs}, NIP  ${formValues.nip}, Regon  ${formValues.regon}, zwanym dalej</span>
+       <span><b>Zakładem</b> lub <b>Zakładem Pracy</b>, reprezentowanym przez ${formValues.respresentant}</span>
        <span>………………………………………………………………………………………………….</span>
       
        <span>§ 1. Uczelnia kieruje studenta …………………………………………………………………,</span>

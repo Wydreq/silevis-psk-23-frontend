@@ -42,22 +42,20 @@ export class PassingIntershipFormComponent {
     attestationFormValues: IAttestationFormValues
   ) {
     const html = htmlToPdfmake(traineeApplication(passFormValues));
-    // const certificate = htmlToPdfmake(
-    //   cerificateInternship(attestationFormValues)
-    // );
-
-    const contract = htmlToPdfmake(contractInternship());
+    const certificate = htmlToPdfmake(
+      cerificateInternship(attestationFormValues)
+    );
 
     const documentDefinition = {
-      content: contract, ///htm
+      content: html,
     };
 
     pdfMake.createPdf(documentDefinition).download('zalacznikNr4.pdf');
 
-    // setTimeout(() => {
-    //   const documentDefinition2 = { content: certificate };
-    //   pdfMake.createPdf(documentDefinition2).download('zaswiadczenie.pdf');
-    // }, 600);
+    setTimeout(() => {
+      const documentDefinition2 = { content: certificate };
+      pdfMake.createPdf(documentDefinition2).download('zaswiadczenie.pdf');
+    }, 600);
   }
 
   toggleNextActive() {
