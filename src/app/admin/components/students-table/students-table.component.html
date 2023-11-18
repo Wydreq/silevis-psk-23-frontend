@@ -1,0 +1,75 @@
+<h1>Lista studentów</h1>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="nr_albumu">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Numer albumu.</th>
+      <td mat-cell *matCellDef="let element">{{ element.nr_albumu }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="surname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nazwisko</th>
+      <td mat-cell *matCellDef="let element">{{ element.surname }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="firstname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Imie</th>
+      <td mat-cell *matCellDef="let element">{{ element.firstname }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="practiseMonth">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Praktyki</th>
+      <td mat-cell *matCellDef="let element">{{ element.practiseMonth }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="practiseDateRange">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Termin</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.practiseDateRange }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="company">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Firma</th>
+      <td mat-cell *matCellDef="let element">{{ element.company }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Adres</th>
+      <td mat-cell *matCellDef="let element">{{ element.address }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Telefon</th>
+      <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="passed">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Zaliczone</th>
+      <td mat-cell *matCellDef="let element">{{ element.passed }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4"></td>
+    </tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page of users"
+  ></mat-paginator>
+</div>
