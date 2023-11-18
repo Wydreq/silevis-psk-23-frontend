@@ -7,6 +7,8 @@ import pdfMake from 'pdfmake/build/pdfmake';
 import { contractInternship } from '../../templates/contract-internship-pdf';
 import { UserService } from 'src/app/core/user.service';
 
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 @Component({
   selector: 'app-application-for-intern-form',
   templateUrl: './application-for-intern-form.component.html',
@@ -18,7 +20,19 @@ export class ApplicationForInternFormComponent implements OnInit {
   constructor(
     private companyService: CompanyService,
     private userService: UserService
-  ) {}
+  ) {
+    (pdfMake as any).fonts = {
+      times: {
+        normal:
+          'https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.ttf',
+        bold: 'https://db.onlinewebfonts.com/t/9ddfee5c410187b783c0be8d068a8273.ttf',
+        italics:
+          'https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.ttf',
+        bolditalics:
+          'https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.ttf',
+      },
+    };
+  }
 
   ngOnInit(): void {
     this.applicationForm = new FormGroup({
@@ -93,7 +107,10 @@ export class ApplicationForInternFormComponent implements OnInit {
     );
 
     const documentDefinition = {
-      content: html, ///htm
+      defaultStyle: {
+        font: 'times', // Ustaw nazwę lokalnej czcionki
+      },
+      content: html,
     };
     return documentDefinition;
   }
