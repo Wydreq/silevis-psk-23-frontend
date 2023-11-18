@@ -18,6 +18,8 @@ import { RequestNewDatesComponent } from './components/request-new-dates/request
     StudentsTableComponent,
     IntershipDatesComponent,
     AddInteshipDateModalComponent,
+    AddNewStudentFormComponent,
+    RequestNewDatesComponent,
   ],
   imports: [
     CommonModule,
