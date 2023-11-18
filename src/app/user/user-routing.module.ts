@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user.component';
 import { PassingIntershipFormComponent } from './components/passing-intership/passing-intership-form/passing-intership-form.component';
+import { ApplicationForInternFormComponent } from './components/application-for-intern-form/application-for-intern-form.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,11 @@ const routes: Routes = [
   {
     path: 'passing-intership',
     component: PassingIntershipFormComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'application-for-intership',
+    component: ApplicationForInternFormComponent,
     pathMatch: 'full',
   },
 ];
