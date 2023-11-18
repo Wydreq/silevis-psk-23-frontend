@@ -30,7 +30,7 @@
           "programme": "Informatyka"
         }
       ],
-      "requestNewDateRange": "Wed Nov 15 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)-Thu Nov 23 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)"
+      "requestNewDateRange": "Sun Nov 19 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)-Tue Nov 28 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)"
     },
     {
       "id": "3",
@@ -47,6 +47,20 @@
       "requestNewDateRange": null,
       "acceptedRequest": "empty",
       "adminId": "36295"
+    },
+    {
+      "nr_albumu": "",
+      "surname": "",
+      "firstname": "",
+      "email": "",
+      "practiseMonth": "",
+      "practiseDateRange": "",
+      "company": "ss",
+      "address": "",
+      "phone": "",
+      "passed": false,
+      "adminId": "36295",
+      "id": "cLk_k_t"
     }
   ],
   "admins": [

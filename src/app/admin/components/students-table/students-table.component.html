@@ -10,7 +10,7 @@
   Add student
 </button>
 
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8 tableCont">
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
     <ng-container matColumnDef="nr_albumu">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>
@@ -102,6 +102,7 @@
     </tr>
   </table>
   <mat-paginator
+    class="paginatorCont"
     [pageSizeOptions]="[5, 10, 25, 100]"
     aria-label="Select page of users"
   ></mat-paginator>
