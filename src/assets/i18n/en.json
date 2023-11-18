@@ -2,6 +2,19 @@
   "sign": "Sign in!",
   "login": "Log in",
   "email": "E-mail",
+
+
+  "studentList": "Student list",
+  "surname": "Surname",
+  "name": "Name",
+  "index": "Index number",
+  "practices": "Practise",
+  "deadline": "Deadline",
+  "company": "Company",
+  "phone": "Phone",
+  "pass": "Pass",
+  "actions": "Actions"
+
   "chooseAction": "Choose action",
   "logout": "Logout",
   "applicationForPractice": "Apply for an internship",
@@ -29,4 +42,5 @@
   "partTime": "Zaoczne",
   "stationary": "Stacjonarne",
   "next": "Next"
+
 }

@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { IntershipDatesComponent } from './components/intership-dates/intership-dates.component';
 import { AddInteshipDateModalComponent } from './components/add-inteship-date-modal/add-inteship-date-modal.component';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,12 @@ import { FormsModule } from '@angular/forms';
     IntershipDatesComponent,
     AddInteshipDateModalComponent,
   ],
-  imports: [CommonModule, AdminRoutingModule, SharedModule, FormsModule],
+  imports: [
+    CommonModule,
+    AdminRoutingModule,
+    SharedModule,
+    FormsModule,
+    TranslateModule,
+  ],
 })
 export class AdminModule {}
