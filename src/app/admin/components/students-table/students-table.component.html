@@ -57,7 +57,12 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef>Actions</th>
       <td mat-cell *matCellDef="let element">
-        <button *ngIf="!element.passed" mat-button color="warn">
+        <button
+          *ngIf="!element.passed"
+          mat-button
+          color="warn"
+          (click)="pass(element.nr_albumu)"
+        >
           Zalicz praktykę
         </button>
       </td>

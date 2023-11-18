@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ManageDatesService } from '../../services/manage-dates.service';
 
 export interface DialogData {
   startDate: Date;
@@ -16,18 +17,40 @@ export interface DialogData {
 export class AddInteshipDateModalComponent {
   protected dates = new FormGroup({
     range: new FormGroup({
-      start: new FormControl<Date | null>(null),
-      end: new FormControl<Date | null>(null),
+      start: new FormControl<Date | null>(null, Validators.required),
+      end: new FormControl<Date | null>(null, Validators.required),
     }),
-    requestEndDate: new FormControl<Date | null>(null),
+    requestEndDate: new FormControl<Date | null>(null, Validators.required),
   });
 
   constructor(
     public dialogRef: MatDialogRef<AddInteshipDateModalComponent>,
+    private manageDates: ManageDatesService,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {}
 
+  onSubmit() {
+    this.manageDates.addNewDates(this.dates.value);
+    this.dialogRef.close();
+  }
+
   onNoClick(): void {
     this.dialogRef.close();
+  }
+  ngOnInit() {
+    console.log(this.data);
+    if ((this.data as any).id) {
+      const valueDate = this.manageDates.practisesDates
+        .getValue()
+        .find((date: any) => date.id === (this.data as any).id);
+
+      this.dates.patchValue({
+        range: {
+          end: valueDate.endDate,
+          start: valueDate.startDate,
+        },
+        requestEndDate: valueDate.requestEndDate,
+      });
+    }
   }
 }
