@@ -49,5 +49,11 @@
   "studentPosition": "Stanowisko studenta w czasie pracy",
   "additionalComments": "Uwagi dodatkowe",
   "download": "Pobierz wnioski",
-  "print": "Drukuj"
+  "print": "Drukuj",
+
+  "weaii": "Elektrotechniki, Automatyki i Informatyki",
+  "bia": "Budownictwa i Architektury",
+  "mibm": "Mechatroniki i Budowy Maszyn",
+  "isge": "Inżynierii Środowiska, Geodezji i Energetyki Odnawialnej",
+  "zimk": "Zarządzania i Modelowania Komputerowego"
 }

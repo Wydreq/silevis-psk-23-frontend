@@ -49,5 +49,11 @@
   "studentPosition": "Student position during work",
   "additionalComments": "Additional comments",
   "download": "Download applications",
-  "print": "Print"
+  "print": "Print",
+
+  "weaii": "Electrical Engineering, Automation and Computer Science",
+  "bia": "Construction and Architecture",
+  "mibm": "Mechatronics and Machine Construction",
+  "isge": "Environmental Engineering, Geodesy and Renewable Energy",
+  "zimk": "Management and Computer Modeling"
 }
