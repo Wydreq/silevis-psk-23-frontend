@@ -14,6 +14,10 @@ export class StudentsTableComponent implements AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<any>;
 
+  allowedDates = [
+    { start: new Date('03.07.2023'), end: new Date('28.07.2023') },
+  ];
+
   displayedColumns: string[] = [
     'nr_albumu',
     'surname',
@@ -25,6 +29,7 @@ export class StudentsTableComponent implements AfterViewInit {
     'address',
     'phone',
     'passed',
+    'actions',
   ];
 
   constructor() {

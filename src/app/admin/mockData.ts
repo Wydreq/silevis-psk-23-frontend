@@ -21,7 +21,7 @@ export const dataMock = [
     company: 'Wrona',
     address: 'Klonowa',
     phone: '123456789',
-    passed: false,
+    passed: true,
   },
   {
     nr_albumu: 12997,
@@ -33,7 +33,7 @@ export const dataMock = [
     company: 'Wrona',
     address: 'Klonowa',
     phone: '123456789',
-    passed: false,
+    passed: true,
   },
   {
     nr_albumu: 12997,
@@ -93,7 +93,7 @@ export const dataMock = [
     company: 'Wrona',
     address: 'Klonowa',
     phone: '123456789',
-    passed: false,
+    passed: true,
   },
   {
     nr_albumu: 12997,
@@ -105,6 +105,6 @@ export const dataMock = [
     company: 'Wrona',
     address: 'Klonowa',
     phone: '123456789',
-    passed: false,
+    passed: true,
   },
 ];
