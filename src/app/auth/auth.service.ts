@@ -22,10 +22,19 @@ export class AuthService {
     this.http.get<IUser>(`/api/user/${email}`).subscribe((user: IUser) => {
       this.userService.user.next(user);
       localStorage.setItem('userData', JSON.stringify(user));
-      this.popup.openDialog(PopupState.OK, 'Everything is ok');
+      if (user.staffStatus === 2) {
+        this.http
+          .get(`http://localhost:8000/users?adminId=${user.id}`)
+          .subscribe((users: any) => {
+            this.userService.adminUsers.next(users);
+            console.log(users);
+            localStorage.setItem('adminUsers', JSON.stringify(users[0]));
+            this.popup.openDialog(PopupState.OK, 'Everything is ok');
+          });
+      }
       user.studentNumber
-        ? this.router.navigate(['student'])
-        : this.router.navigate(['/supervisor']);
+        ? this.router.navigate(['/student'])
+        : this.router.navigate(['/admin']);
     });
   }
 
@@ -34,6 +43,7 @@ export class AuthService {
     if (userJSON) {
       const user: IUser = JSON.parse(userJSON);
       this.userService.user.next(user);
+      this.signIn(user.email);
     }
   }
 

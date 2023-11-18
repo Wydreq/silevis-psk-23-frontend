@@ -6,6 +6,8 @@ import { dataMock } from '../../mockData';
 import { MatDialog } from '@angular/material/dialog';
 import { AddNewStudentFormComponent } from './add-new-student-form/add-new-student-form.component';
 import { FormGroup } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { UserService } from 'src/app/core/user.service';
 
 @Component({
   selector: 'app-students-table',
@@ -15,7 +17,7 @@ import { FormGroup } from '@angular/forms';
 export class StudentsTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  dataSource: MatTableDataSource<any>;
+  dataSource: MatTableDataSource<any> | any;
 
   allowedDates = [
     { start: new Date('03.07.2023'), end: new Date('28.07.2023') },
@@ -35,9 +37,11 @@ export class StudentsTableComponent implements AfterViewInit {
     'actions',
   ];
 
-  constructor(private dialog: MatDialog) {
-    this.dataSource = new MatTableDataSource(dataMock);
-  }
+  constructor(
+    private dialog: MatDialog,
+    private http: HttpClient,
+    private userService: UserService
+  ) {}
 
   pass(nr_albumu: string) {
     console.log(nr_albumu);
@@ -53,5 +57,11 @@ export class StudentsTableComponent implements AfterViewInit {
       width: '40%',
     });
     dialogRef.afterClosed().subscribe((result: FormGroup) => {});
+  }
+
+  ngOnInit() {
+    this.userService.adminUsers.subscribe((value) => {
+      this.dataSource = new MatTableDataSource(value || []);
+    });
   }
 }

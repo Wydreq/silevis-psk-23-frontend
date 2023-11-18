@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "server-json": "json-server --watch db.json --port 8000"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +26,7 @@
     "@ngx-translate/http-loader": "^8.0.0",
     "html-to-pdfmake": "^2.5.1",
     "html2pdf.js": "^0.10.1",
+    "json-server": "^0.17.4",
     "jspdf": "^2.5.1",
     "pdfmake": "^0.2.8",
     "rxjs": "~7.8.0",

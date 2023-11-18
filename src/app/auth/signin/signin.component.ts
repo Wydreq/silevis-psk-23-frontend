@@ -19,6 +19,7 @@ export class SigninComponent implements OnInit {
   }
 
   signInHandler() {
+    console.log(this.signInForm.value.email);
     this.authService.signIn(this.signInForm.value.email);
   }
 }

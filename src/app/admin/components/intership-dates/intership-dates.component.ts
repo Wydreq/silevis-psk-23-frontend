@@ -6,6 +6,7 @@ import { AddInteshipDateModalComponent } from '../add-inteship-date-modal/add-in
 import { FormGroup } from '@angular/forms';
 import { SingleDateToDisplay } from 'src/app/shared/types/SingleDateToDisplay';
 import { ManageDatesService } from '../../services/manage-dates.service';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-intership-dates',
   templateUrl: './intership-dates.component.html',
@@ -21,22 +22,21 @@ export class IntershipDatesComponent {
     'edit',
   ];
   dataToDisplay$: Observable<SingleDateToDisplay[]>;
-  exampleData = [
-    {
-      id: '1',
-      startDate: new Date(),
-      endDate: new Date(),
-      requestEndDate: new Date(),
-    },
-  ];
+
+  dates$: Observable<
+    Record<'startDate' | 'endDate' | 'requestEndDate', string>[]
+  >;
+
   constructor(
     public dialog: MatDialog,
-    private manageDates: ManageDatesService
+    private manageDates: ManageDatesService,
+    private http: HttpClient
   ) {}
   openDialog(): void {
     const dialogRef = this.dialog.open(AddInteshipDateModalComponent, {
       width: '40%',
     });
+
     dialogRef.afterClosed().subscribe((result: FormGroup) => {});
   }
 
@@ -50,5 +50,6 @@ export class IntershipDatesComponent {
 
   ngOnInit() {
     this.dataToDisplay$ = this.manageDates.practisesDates;
+    this.dates$ = this.manageDates.practisesDates;
   }
 }

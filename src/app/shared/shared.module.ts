@@ -29,6 +29,7 @@ import { MatBadgeModule } from '@angular/material/badge';
   declarations: [ColorByStateDirective, SwitchLanguageComponent],
   imports: [CommonModule],
   exports: [
+    MatBadgeModule,
     MatToolbarModule,
     MatBadgeModule,
     MatIconModule,
@@ -63,6 +64,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatSidenavModule,
     MatMenuModule,
     ColorByStateDirective,
+    MatBadgeModule,
   ],
 })
 export class SharedModule {}

@@ -8,4 +8,5 @@ import { IUser } from '../shared/interface/user.interface';
 })
 export class UserService {
   user = new BehaviorSubject<IUser | null>(null);
+  adminUsers = new BehaviorSubject(null);
 }

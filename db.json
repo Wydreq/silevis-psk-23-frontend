@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "nr_albumu": 12997,
+      "surname": "Jakub",
+      "firstname": "JK",
+      "email": "test@gm.com",
+      "practiseMonth": "Lipiec",
+      "practiseDateRange": "01.07 - 28.07",
+      "company": "Wrona",
+      "address": "Klonowa",
+      "phone": "123456789",
+      "passed": false,
+      "requestNewDateRange": null,
+      "acceptedRequest": "empty",
+      "adminId": "36294"
+    },
+    {
+      "id": "2",
+      "nr_albumu": 18997,
+      "surname": "Paweł",
+      "firstname": "JdK",
+      "email": "s011111@student.tu.kielce.pl",
+      "practiseMonth": "Czerwiec",
+      "practiseDateRange": "01.07 - 28.07",
+      "company": "Wydra",
+      "address": "Klonowa",
+      "phone": "123456dsdf789",
+      "passed": false,
+      "requestNewDateRange": null,
+      "acceptedRequest": "empty",
+      "adminId": "36295"
+    },
+    {
+      "id": "3",
+      "nr_albumu": 18997,
+      "surname": "Piotr",
+      "firstname": "JdK",
+      "email": "s022222@student.tu.kielce.pl",
+      "practiseMonth": "Czerwiec",
+      "practiseDateRange": "01.07 - 28.07",
+      "company": "Wydra",
+      "address": "Klonowa",
+      "phone": "123456dsdf789",
+      "passed": false,
+      "requestNewDateRange": null,
+      "acceptedRequest": "empty",
+      "adminId": "36295"
+    },
+    {
+      "nr_albumu": "dfs",
+      "surname": "dsfds",
+      "firstname": "dsfds",
+      "email": "fdsfds",
+      "practiseMonth": "fdsfds",
+      "practiseDateRange": "fdsfds",
+      "company": "fdsfdsfds",
+      "address": "fdsfds",
+      "phone": "fdsfds",
+      "passed": true,
+      "id": "op8EQ6S"
+    },
+    {
+      "nr_albumu": "",
+      "surname": "sadsa",
+      "firstname": "",
+      "email": "sadsa",
+      "practiseMonth": "",
+      "practiseDateRange": "",
+      "company": "sadsa",
+      "address": "dsasa",
+      "phone": "asdad",
+      "passed": false,
+      "adminId": "36294",
+      "id": "sa1CsHL"
+    },
+    {
+      "nr_albumu": "",
+      "surname": "sadsa",
+      "firstname": "",
+      "email": "sadsa",
+      "practiseMonth": "",
+      "practiseDateRange": "",
+      "company": "sadsa",
+      "address": "dsasa",
+      "phone": "asdad",
+      "passed": false,
+      "adminId": "36294",
+      "id": "N35qbUr"
+    }
+  ],
+  "admins": [
+    {
+      "id": "36294",
+      "email": "a.kowalski@tu.kiece.pl"
+    },
+    {
+      "id": "36295",
+      "email": "p.fraczek@tu.kiece.pl"
+    }
+  ],
+  "dates": []
+}

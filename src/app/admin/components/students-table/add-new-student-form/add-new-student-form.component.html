@@ -1,1 +1,37 @@
-<p>add-new-student-form works!</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <label for="nr_albumu">Numer albumu:</label>
+  <input type="text" formControlName="nr_albumu" id="nr_albumu" /><br />
+
+  <label for="surname">Nazwisko:</label>
+  <input type="text" formControlName="surname" id="surname" /><br />
+
+  <label for="firstname">Imię:</label>
+  <input type="text" formControlName="firstname" id="firstname" /><br />
+
+  <label for="email">Email:</label>
+  <input type="email" formControlName="email" id="email" /><br />
+
+  <label for="practiseMonth">Miesiąc praktyk:</label>
+  <input type="text" formControlName="practiseMonth" id="practiseMonth" /><br />
+
+  <label for="practiseDateRange">Okres praktyk:</label>
+  <input
+    type="text"
+    formControlName="practiseDateRange"
+    id="practiseDateRange"
+  /><br />
+
+  <label for="company">Firma:</label>
+  <input type="text" formControlName="company" id="company" /><br />
+
+  <label for="address">Adres:</label>
+  <input type="text" formControlName="address" id="address" /><br />
+
+  <label for="phone">Telefon:</label>
+  <input type="text" formControlName="phone" id="phone" /><br />
+
+  <label for="passed">Zaliczone:</label>
+  <input type="checkbox" formControlName="passed" id="passed" /><br />
+
+  <button type="submit">Wyślij</button>
+</form>
