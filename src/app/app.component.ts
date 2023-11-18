@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.autoLogin();
-    console.log(this.translate.currentLang);
-    this.translate.use('en');
+    console.log(localStorage.getItem('language'));
+    this.translate.use(localStorage.getItem('language') || 'pl');
   }
 }

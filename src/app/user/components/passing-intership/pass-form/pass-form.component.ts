@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IPassFormValues } from 'src/app/user/interfaces/form.interfaces';
 import { jsPDF } from 'jspdf';
 
@@ -40,16 +40,16 @@ export class PassFormComponent implements OnInit {
   }
   private createPassForm() {
     this.passForm = this.formBuilder.group({
-      firstName: this.userMock.firstName,
-      lastName: this.userMock.lastName,
-      studentNumber: this.userMock.studentNumber,
-      programme: [''],
-      year: [],
+      firstName: [this.userMock.firstName, Validators.required],
+      lastName: [this.userMock.lastName, Validators.required],
+      studentNumber: [this.userMock.studentNumber, Validators.required],
+      programme: ['', Validators.required],
+      year: ['', Validators.min(2023)],
       studiesForm: ['stacjonarne'],
-      deputyDean: [''],
-      academicYear: [],
-      practicesBase: [''],
-      traineeManager: [''],
+      deputyDean: ['', Validators.required],
+      academicYear: ['', Validators.min(2023)],
+      practicesBase: ['', Validators.required],
+      traineeManager: ['', Validators.required],
     });
   }
 }

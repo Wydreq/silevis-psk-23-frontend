@@ -10,6 +10,7 @@ import htmlToPdfmake from 'html-to-pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import pdfMake from 'pdfmake/build/pdfmake';
 import { cerificateInternship } from 'src/app/user/templates/certificate-internship-pdf';
+
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -40,22 +41,22 @@ export class PassingIntershipFormComponent {
     attestationFormValues: IAttestationFormValues
   ) {
     // Utwórz nowy obiekt jsPDF
-    const pdf = new jsPDF();
 
     const html = htmlToPdfmake(traineeApplication(passFormValues));
     const certificate = htmlToPdfmake(
       cerificateInternship(attestationFormValues)
     );
     // Dodaj treść do pliku PDF
-    const documentDefinition = { content: html };
+    const documentDefinition = {
+      content: html,
+    };
 
-    pdfMake.createPdf(documentDefinition).download();
+    pdfMake.createPdf(documentDefinition).download('zalacznikNr4.pdf');
 
-    // Zapisz plik PDF
     setTimeout(() => {
       const documentDefinition2 = { content: certificate };
-      pdfMake.createPdf(documentDefinition2).download();
-    }, 200);
+      pdfMake.createPdf(documentDefinition2).download('zaswiadczenie.pdf');
+    }, 600);
   }
 
   toggleNextActive() {
