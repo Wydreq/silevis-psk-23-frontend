@@ -43,8 +43,15 @@ export class StudentsTableComponent implements AfterViewInit {
     private userService: UserService
   ) {}
 
-  pass(nr_albumu: string) {
-    console.log(nr_albumu);
+  pass(id: string, value: any) {
+    this.http
+      .put(`http://localhost:8000/users/${id}`, {
+        ...value,
+        passed: true,
+      })
+      .subscribe(() => {
+        location.reload();
+      });
   }
 
   ngAfterViewInit() {

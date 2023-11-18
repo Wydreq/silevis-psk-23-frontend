@@ -33,10 +33,7 @@ export class AddNewStudentFormComponent {
     });
   }
 
-  ngOnInit(): void {}
-
   onSubmit(): void {
-    console.log(this.myForm.value);
     this.http
       .post('http://localhost:8000/users', {
         ...this.myForm.value,

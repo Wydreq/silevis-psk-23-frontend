@@ -27,7 +27,7 @@ export class AuthService {
           .get(`http://localhost:8000/users?adminId=${user.id}`)
           .subscribe((users: any) => {
             this.userService.adminUsers.next(users);
-            console.log(users);
+
             localStorage.setItem('adminUsers', JSON.stringify(users[0]));
             this.popup.openDialog(PopupState.OK, 'Everything is ok');
           });

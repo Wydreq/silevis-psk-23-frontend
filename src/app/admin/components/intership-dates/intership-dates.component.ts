@@ -51,5 +51,6 @@ export class IntershipDatesComponent {
   ngOnInit() {
     this.dataToDisplay$ = this.manageDates.practisesDates;
     this.dates$ = this.manageDates.practisesDates;
+    this.manageDates.getDates();
   }
 }

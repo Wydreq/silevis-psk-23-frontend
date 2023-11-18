@@ -30,7 +30,7 @@ export class AddInteshipDateModalComponent {
   ) {}
 
   onSubmit() {
-    this.manageDates.addNewDates(this.dates.value);
+    this.manageDates.addNewDate(this.dates.value);
     this.dialogRef.close();
   }
 
@@ -38,7 +38,6 @@ export class AddInteshipDateModalComponent {
     this.dialogRef.close();
   }
   ngOnInit() {
-    console.log(this.data);
     if ((this.data as any).id) {
       const valueDate = this.manageDates.practisesDates
         .getValue()
@@ -46,8 +45,8 @@ export class AddInteshipDateModalComponent {
 
       this.dates.patchValue({
         range: {
-          end: valueDate.endDate,
-          start: valueDate.startDate,
+          end: valueDate.range.end,
+          start: valueDate.range.start,
         },
         requestEndDate: valueDate.requestEndDate,
       });

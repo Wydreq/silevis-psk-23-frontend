@@ -13,22 +13,6 @@ export class ManageDatesService {
 
   practisesDates = new BehaviorSubject<any>(null);
 
-  addNewDates(
-    dateData: Partial<{
-      range: Partial<{ start: Date | null; end: Date | null }>;
-      requestEndDate: Date | null;
-    }>
-  ) {
-    const valueToPush = {
-      startDate: dateData.range?.start,
-      endDate: dateData.range?.end,
-      requestEndDate: dateData.requestEndDate,
-      id: uuidv4(),
-    };
-
-    this.practisesDates.next([...this.practisesDates.getValue(), valueToPush]);
-  }
-
   deleteDate(id: string) {
     this.http.delete(`http://localhost:8000/dates/${id}`).subscribe(() => {
       this.getDates();
@@ -47,6 +31,12 @@ export class ManageDatesService {
     this.dialog.open(AddInteshipDateModalComponent, {
       width: '40%',
       data: this.practisesDates.getValue().find((date: any) => date.id === id),
+    });
+  }
+
+  confirmEdit(id: string, value: any) {
+    this.http.put(`http://localhost:8000/dates/${id}}`, value).subscribe(() => {
+      this.getDates();
     });
   }
 

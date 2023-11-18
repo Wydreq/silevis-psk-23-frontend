@@ -87,7 +87,7 @@
           *ngIf="!element.passed"
           mat-button
           color="warn"
-          (click)="pass(element.nr_albumu)"
+          (click)="pass(element.id, element)"
         >
           {{ "passInternship" | translate }}
         </button>

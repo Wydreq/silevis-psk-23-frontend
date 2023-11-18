@@ -27,7 +27,7 @@
       "company": "Wydra",
       "address": "Klonowa",
       "phone": "123456dsdf789",
-      "passed": false,
+      "passed": true,
       "requestNewDateRange": null,
       "acceptedRequest": "empty",
       "adminId": "36295"
@@ -43,7 +43,7 @@
       "company": "Wydra",
       "address": "Klonowa",
       "phone": "123456dsdf789",
-      "passed": false,
+      "passed": true,
       "requestNewDateRange": null,
       "acceptedRequest": "empty",
       "adminId": "36295"
@@ -88,6 +88,34 @@
       "passed": false,
       "adminId": "36294",
       "id": "N35qbUr"
+    },
+    {
+      "nr_albumu": "",
+      "surname": "",
+      "firstname": "sdds",
+      "email": "dsfs",
+      "practiseMonth": "sdfs",
+      "practiseDateRange": "dsff",
+      "company": "sdfs",
+      "address": "dsff",
+      "phone": "",
+      "passed": true,
+      "adminId": "36295",
+      "id": "GtUEHnU"
+    },
+    {
+      "nr_albumu": "",
+      "surname": "",
+      "firstname": "cdsc",
+      "email": "",
+      "practiseMonth": "",
+      "practiseDateRange": "sdcsd",
+      "company": "",
+      "address": "",
+      "phone": "",
+      "passed": true,
+      "adminId": "36295",
+      "id": "xysni0z"
     }
   ],
   "admins": [
@@ -100,5 +128,22 @@
       "email": "p.fraczek@tu.kiece.pl"
     }
   ],
-  "dates": []
+  "dates": [
+    {
+      "range": {
+        "start": "2023-10-31T23:00:00.000Z",
+        "end": "2023-11-09T23:00:00.000Z"
+      },
+      "requestEndDate": "2023-11-08T23:00:00.000Z",
+      "id": 1
+    },
+    {
+      "range": {
+        "start": "2023-11-07T23:00:00.000Z",
+        "end": "2023-11-22T23:00:00.000Z"
+      },
+      "requestEndDate": "2023-11-29T23:00:00.000Z",
+      "id": 2
+    }
+  ]
 }

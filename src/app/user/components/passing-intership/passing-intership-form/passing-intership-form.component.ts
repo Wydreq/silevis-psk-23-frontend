@@ -44,8 +44,6 @@ export class PassingIntershipFormComponent {
   protected attestationSubmitHandler(
     attestationFormValues: IAttestationFormValues
   ) {
-    console.log(attestationFormValues);
-    console.log(this.passFormValues);
     this.generatePDF(this.passFormValues, attestationFormValues);
   }
 
@@ -61,7 +59,7 @@ export class PassingIntershipFormComponent {
     const documentDefinition = {
       content: html,
       defaultStyle: {
-        font: 'times', // Ustaw nazwę lokalnej czcionki
+        font: 'times',
       },
     };
 
