@@ -9,6 +9,7 @@ import { PassFormComponent } from './components/passing-intership/pass-form/pass
 import { AttestationFormComponent } from './components/passing-intership/attestation-form/attestation-form.component';
 import { ApplicationForInternFormComponent } from './components/application-for-intern-form/application-for-intern-form.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { DateOfPractiseComponent } from './components/date-of-practise/date-of-practise.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TranslateModule } from '@ngx-translate/core';
     PassFormComponent,
     AttestationFormComponent,
     ApplicationForInternFormComponent,
+    DateOfPractiseComponent,
   ],
   imports: [CommonModule, UserRoutingModule, SharedModule, TranslateModule],
 })
