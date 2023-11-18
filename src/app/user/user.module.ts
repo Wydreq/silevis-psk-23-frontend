@@ -8,9 +8,16 @@ import { PassingIntershipFormComponent } from './components/passing-intership/pa
 import { PassFormComponent } from './components/passing-intership/pass-form/pass-form.component';
 import { AttestationFormComponent } from './components/passing-intership/attestation-form/attestation-form.component';
 import { ApplicationForInternFormComponent } from './components/application-for-intern-form/application-for-intern-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [UserComponent, PassingIntershipFormComponent, PassFormComponent, AttestationFormComponent, ApplicationForInternFormComponent],
-  imports: [CommonModule, UserRoutingModule, SharedModule],
+  declarations: [
+    UserComponent,
+    PassingIntershipFormComponent,
+    PassFormComponent,
+    AttestationFormComponent,
+    ApplicationForInternFormComponent,
+  ],
+  imports: [CommonModule, UserRoutingModule, SharedModule, TranslateModule],
 })
 export class UserModule {}

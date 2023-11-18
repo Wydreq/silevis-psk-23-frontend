@@ -7,6 +7,7 @@ import { PopupComponent } from './components/popup.component';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
     PopupComponent,
     LoadingSpinnerComponent,
   ],
-  imports: [CommonModule, SharedModule, RouterModule],
+  imports: [CommonModule, SharedModule, RouterModule, TranslateModule],
   exports: [NavbarComponent, FooterComponent, LoadingSpinnerComponent],
   providers: [
     {

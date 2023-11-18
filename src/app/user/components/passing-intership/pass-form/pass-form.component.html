@@ -3,7 +3,7 @@
     <div class="formItem">
       <p>
         <mat-form-field>
-          <mat-label>Kierunek studiów</mat-label>
+          <mat-label>{{ "studyProgramme" | translate }}</mat-label>
           <mat-select
             *ngFor="let programme of userMock.studentProgrammes"
             formControlName="programme"
@@ -16,16 +16,20 @@
       </p>
       <p>
         <mat-form-field>
-          <mat-label>Forma studiów</mat-label>
+          <mat-label>{{ "formOfStudy" | translate }}</mat-label>
           <mat-select formControlName="studiesForm">
-            <mat-option value="zaoczne">Zaoczne</mat-option>
-            <mat-option value="stacjonarne">Stacjonarne</mat-option>
+            <mat-option value="zaoczne">{{
+              "partTime" | translate
+            }}</mat-option>
+            <mat-option value="stacjonarne">{{
+              "stationary" | translate
+            }}</mat-option>
           </mat-select>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="fill">
-          <mat-label>Rok studiów</mat-label>
+          <mat-label>{{ "studyYear" | translate }}</mat-label>
           <input type="number" formControlName="year" matInput />
         </mat-form-field>
       </p>
@@ -33,23 +37,20 @@
     <div class="formItem">
       <p>
         <mat-form-field appearance="fill">
-          <mat-label>Prodziekan wydziału</mat-label>
+          <mat-label>{{ "deputyDean" | translate }}</mat-label>
           <input formControlName="deputyDean" matInput />
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="fill">
-          <mat-label>Rok akademicki</mat-label>
+          <mat-label>{{ "academicYear" | translate }}</mat-label>
           <input formControlName="academicYear" matInput />
         </mat-form-field>
       </p>
 
       <p>
         <mat-form-field>
-          <mat-label
-            >Podaj podstawe praktyki (na podstawie (wpisać jedną z sytuacji
-            określoną w § 6 ust. 10 Regulaminu praktyk zawodowych) )
-          </mat-label>
+          <mat-label>{{ "internBase" | translate }} </mat-label>
           <textarea formControlName="practicesBase" matInput></textarea>
         </mat-form-field>
       </p>
@@ -60,6 +61,6 @@
     mat-flat-button
     style="background-color: #ef7a1b"
   >
-    Next
+    {{ "next" | translate }}
   </button>
 </form>

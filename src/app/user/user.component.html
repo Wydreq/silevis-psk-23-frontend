@@ -1,6 +1,6 @@
 <div class="container">
   <div class="box">
-    <h1>Wybierz akcje</h1>
+    <h1>{{ "chooseAction" | translate }}</h1>
 
     <div class="controls">
       <button
@@ -8,14 +8,14 @@
         color="primary"
         [routerLink]="['/student/application-for-intership']"
       >
-        Podanie o praktykę
+        {{ "applicationForPractice" | translate }}
       </button>
       <button
         mat-flat-button
         color="primary"
         [routerLink]="['/student/passing-intership']"
       >
-        Podanie o zaliczenie praktyki
+        {{ "applicationForPracticeApprove" | translate }}
       </button>
     </div>
   </div>

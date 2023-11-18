@@ -3,6 +3,7 @@
   "login": "Zaloguj",
   "email": "Adres email",
   "chooseAction": "Wybierz akcje",
+
   "studentList": "Lista studentów",
   "surname": "Nazwisko",
   "name": "Imię",
@@ -13,4 +14,32 @@
   "phone": "Telefon",
   "pass": "Zaliczone",
   "actions": "Akcje"
+
+  "logout": "Wyloguj",
+  "applicationForPractice": "Podanie o praktykę",
+  "applicationForPracticeApprove": "Podanie o zaliczenie praktyki",
+  "makeAnApplication": "Złóż podanie o praktyki",
+  "agreementDate": "Data zawarcia umowy",
+  "department": "Wydział",
+  "infoAboutCompany": "Informacje o firmie",
+  "companyName": "Nazwa firmy",
+  "address": "Adres",
+  "representativeOfTheCompany": "Osoba reprezentacyjna firmy",
+  "internshipDate": "Okres odbycia praktyk",
+  "contactInfo": "Informacje kontaktowe",
+  "internCompanySupervisor": "Opiekun praktyk w zakładzie pracy",
+  "internUniversitySupervisor": "Opiekun praktyk politechniki",
+  "phoneNumber": "Numer telefonu",
+  "submit": "Zatwierdź",
+  "makeAnApplicationForApprove": "Złóż podanie o zaliczenie praktyki studenckiej",
+  "studyProgramme": "Kierunek studiów",
+  "deputyDean": "Prodziekan wydziału",
+  "formOfStudy": "Forma studiów",
+  "academicYear": "Rok akademicki",
+  "studyYear": "Rok studiów",
+  "internBase": "Podaj podstawe praktyki (na podstawie (wpisać jedną z sytuacji określoną w § 6 ust. 10 Regulaminu praktyk zawodowych) )",
+  "partTime": "Zaoczne",
+  "stationary": "Stacjonarne",
+  "next": "Dalej"
+
 }
