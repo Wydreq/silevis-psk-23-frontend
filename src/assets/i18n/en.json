@@ -40,5 +40,20 @@
   "internBase": "Provide the basis for the practice (based on (enter one of the situations specified in § 6 section 10 of the Professional Practice Regulations))",
   "partTime": "Zaoczne",
   "stationary": "Stacjonarne",
-  "next": "Next"
+  "next": "Next",
+  "studentsInternCompanyName": "Name of the company where student works:",
+  "workingHours": "Working hours",
+  "responsibilities": "Responsibilities",
+  "businessProfile": "Business profile",
+  "companyConfirmingPerson": "Details of the person who can certify the accuracy of the above data (president, director, Research/Erasmus Program Coordinator, etc.) along with the signature",
+  "studentPosition": "Student position during work",
+  "additionalComments": "Additional comments",
+  "download": "Download applications",
+  "print": "Print",
+
+  "weaii": "Electrical Engineering, Automation and Computer Science",
+  "bia": "Construction and Architecture",
+  "mibm": "Mechatronics and Machine Construction",
+  "isge": "Environmental Engineering, Geodesy and Renewable Energy",
+  "zimk": "Management and Computer Modeling"
 }

@@ -10,9 +10,27 @@
           </mat-form-field>
         </div>
         <div class="formItem">
-          <mat-form-field class="example-full-width">
+          <mat-form-field>
             <mat-label>{{ "department" | translate }}</mat-label>
-            <input matInput type="text" formControlName="department" />
+            <mat-select formControlName="department">
+              <mat-option value="Elektrotechniki, Automatyki i Informatyki">{{
+                "weaii" | translate
+              }}</mat-option>
+              <mat-option value="Budownictwa i Architektury">{{
+                "bia" | translate
+              }}</mat-option>
+              <mat-option value="Mechatroniki i Budowy Maszyn">{{
+                "mibm" | translate
+              }}</mat-option>
+              <mat-option
+                value="Inżynierii Środowiska, Geodezji i Energetyki
+              Odnawialnej"
+                >{{ "isge" | translate }}</mat-option
+              >
+              <mat-option value="Zarządzania i Modelowania Komputerowego">{{
+                "zimk" | translate
+              }}</mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
       </div>
@@ -58,10 +76,7 @@
               <input matInput type="text" formControlName="krs" />
             </mat-form-field>
           </div>
-        </div>
-
-        <div class="inputsRow">
-          <div class="formItem" style="width: 100%">
+          <div class="formItem">
             <mat-form-field class="example-full-width">
               <mat-label>{{
                 "representativeOfTheCompany" | translate
@@ -148,9 +163,10 @@
       (click)="printSubmit()"
       mat-flat-button
       color="accent"
+      style="margin-top: 20px"
       [disabled]="applicationForm.invalid"
     >
-      Print Pdf
+      {{ "print" | translate }}
     </button>
   </form>
 </div>
