@@ -18,7 +18,10 @@ export class ApplicationForInternFormComponent implements OnInit {
         companyCity: new FormControl(null, Validators.required),
         companyStreet: new FormControl(null, Validators.required),
         krs: new FormControl(null, Validators.required),
-        nip: new FormControl(null, Validators.required),
+        nip: new FormControl(null, [
+          Validators.required,
+          Validators.minLength(1),
+        ]),
         regon: new FormControl(null, Validators.required),
         companyRepresentedBy: new FormControl(null, Validators.required),
       }),
