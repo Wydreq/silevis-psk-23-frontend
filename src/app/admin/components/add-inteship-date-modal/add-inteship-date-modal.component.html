@@ -43,14 +43,16 @@
     </mat-form-field>
   </div>
   <div mat-dialog-actions class="controls">
-    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button (click)="onNoClick()" type="button">No Thanks</button>
     <button
       style="background-color: #fc9c41"
       mat-button
-      [mat-dialog-close]="dates"
       cdkFocusInitial
+      type="submit"
+      (click)="onSubmit()"
+      [disabled]="dates.invalid"
     >
-      Ok
+      Add
     </button>
   </div>
 </div>

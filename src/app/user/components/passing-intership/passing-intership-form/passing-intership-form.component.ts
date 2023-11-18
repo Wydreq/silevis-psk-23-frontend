@@ -4,7 +4,6 @@ import {
   IAttestationFormValues,
   IPassFormValues,
 } from 'src/app/user/interfaces/form.interfaces';
-import { jsPDF } from 'jspdf';
 import { traineeApplication } from 'src/app/user/templates/passing-intership-pdf';
 import htmlToPdfmake from 'html-to-pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
@@ -19,6 +18,20 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
   styleUrls: ['./passing-intership-form.component.scss'],
 })
 export class PassingIntershipFormComponent {
+  constructor() {
+    (pdfMake as any).fonts = {
+      times: {
+        normal:
+          'https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.ttf',
+        bold: 'https://db.onlinewebfonts.com/t/9ddfee5c410187b783c0be8d068a8273.ttf',
+        italics:
+          'https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.ttf',
+        bolditalics:
+          'https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.ttf',
+      },
+    };
+  }
+
   private passFormValues!: IPassFormValues;
   protected nextActive = false;
   protected attestationForm!: FormGroup;
@@ -40,15 +53,16 @@ export class PassingIntershipFormComponent {
     passFormValues: IPassFormValues,
     attestationFormValues: IAttestationFormValues
   ) {
-    // Utwórz nowy obiekt jsPDF
-
     const html = htmlToPdfmake(traineeApplication(passFormValues));
     const certificate = htmlToPdfmake(
       cerificateInternship(attestationFormValues)
     );
-    // Dodaj treść do pliku PDF
+
     const documentDefinition = {
       content: html,
+      defaultStyle: {
+        font: 'times', // Ustaw nazwę lokalnej czcionki
+      },
     };
 
     pdfMake.createPdf(documentDefinition).download('zalacznikNr4.pdf');

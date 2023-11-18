@@ -2,17 +2,13 @@
   <button mat-raised-button class="demo-button" (click)="openDialog()">
     Add data
   </button>
-  <button
-    (click)="removeData()"
-    mat-raised-button
-    [disabled]="!dataToDisplay.length"
-    class="demo-button"
-  >
-    Remove data
-  </button>
 </div>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+<table
+  mat-table
+  [dataSource]="(dataToDisplay$ | async) || []"
+  class="mat-elevation-z8 demo-table"
+>
   <!-- Position Column -->
 
   <!-- Name Column -->
@@ -33,7 +29,22 @@
       {{ element.requestEndDate | date }}
     </td>
   </ng-container>
-
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef>Usuwanie</th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon color="red" (click)="delete(element.id)" class="icon"
+        >delete</mat-icon
+      >
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef>Edycja</th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon color="red" (click)="edit(element.id)" class="icon"
+        >edit</mat-icon
+      >
+    </td>
+  </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>

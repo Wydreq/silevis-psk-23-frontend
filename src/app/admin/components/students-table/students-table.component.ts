@@ -36,6 +36,10 @@ export class StudentsTableComponent implements AfterViewInit {
     this.dataSource = new MatTableDataSource(dataMock);
   }
 
+  pass(nr_albumu: string) {
+    console.log(nr_albumu);
+  }
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
