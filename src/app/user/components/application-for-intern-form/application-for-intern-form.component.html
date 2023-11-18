@@ -1,22 +1,22 @@
 <div class="container">
   <form [formGroup]="applicationForm">
-    <h1>Złóż podanie o praktyki</h1>
+    <h1>{{ "applicationForPractice" | translate }}</h1>
     <div class="formContainer">
       <div class="inputsRow">
         <div class="formItem">
           <mat-form-field class="example-full-width">
-            <mat-label>Data zawarcia umowy</mat-label>
+            <mat-label>{{ "agreementDate" | translate }}</mat-label>
             <input matInput type="date" formControlName="agreementDate" />
           </mat-form-field>
         </div>
         <div class="formItem">
           <mat-form-field class="example-full-width">
-            <mat-label>Wydział</mat-label>
+            <mat-label>{{ "department" | translate }}</mat-label>
             <input matInput type="text" formControlName="department" />
           </mat-form-field>
         </div>
       </div>
-      <h2>Informacje o firmie</h2>
+      <h2>{{ "infoAboutCompany" | translate }}</h2>
       <div formGroupName="company">
         <div class="inputsRow">
           <div class="formItem">
@@ -40,13 +40,13 @@
         <div class="inputsRow">
           <div class="formItem">
             <mat-form-field class="example-full-width">
-              <mat-label>Nazwa firmy</mat-label>
+              <mat-label>{{ "companyName" | translate }}</mat-label>
               <input matInput type="text" formControlName="companyName" />
             </mat-form-field>
           </div>
           <div class="formItem">
             <mat-form-field class="example-full-width">
-              <mat-label>Adres</mat-label>
+              <mat-label>{{ "address" | translate }}</mat-label>
               <input matInput type="text" formControlName="address" />
             </mat-form-field>
           </div>
@@ -63,7 +63,9 @@
         <div class="inputsRow">
           <div class="formItem" style="width: 100%">
             <mat-form-field class="example-full-width">
-              <mat-label>Osoba reprezentacyjna firmy</mat-label>
+              <mat-label>{{
+                "representativeOfTheCompany" | translate
+              }}</mat-label>
               <input
                 matInput
                 type="text"
@@ -76,7 +78,7 @@
       <div class="inputsRow">
         <div class="formItem" style="width: 100%">
           <mat-form-field>
-            <mat-label>Okres odbycia praktyk</mat-label>
+            <mat-label>{{ "internshipDate" | translate }}</mat-label>
             <mat-date-range-input [rangePicker]="picker">
               <input
                 matStartDate
@@ -97,36 +99,36 @@
           </mat-form-field>
         </div>
       </div>
-      <h2>Informacje kontaktowe</h2>
-      <h3>Opiekun praktyk w zakładzie pracy</h3>
+      <h2>{{ "contactInfo" | translate }}</h2>
+      <h3>{{ "internCompanySupervisor" | translate }}</h3>
       <div formGroupName="companySupervisorContact">
         <div class="inputsRow">
           <div class="formItem">
             <mat-form-field class="example-full-width">
-              <mat-label>Email kontaktowy</mat-label>
+              <mat-label>{{ "email" | translate }}</mat-label>
               <input matInput type="text" formControlName="emailAddress" />
             </mat-form-field>
           </div>
           <div class="formItem">
             <mat-form-field class="example-full-width">
-              <mat-label>Numer telefonu</mat-label>
+              <mat-label>{{ "phoneNumber" | translate }}</mat-label>
               <input matInput type="text" formControlName="phoneNumber" />
             </mat-form-field>
           </div>
         </div>
       </div>
-      <h3>Opiekun praktyk politechniki</h3>
+      <h3>{{ "internUniversitySupervisor" | translate }}</h3>
       <div formGroupName="universitySupervisorContact">
         <div class="inputsRow">
           <div class="formItem">
             <mat-form-field class="example-full-width">
-              <mat-label>Email kontaktowy</mat-label>
+              <mat-label>{{ "email" | translate }}</mat-label>
               <input matInput type="text" formControlName="emailAddress" />
             </mat-form-field>
           </div>
           <div class="formItem">
             <mat-form-field class="example-full-width">
-              <mat-label>Numer telefonu</mat-label>
+              <mat-label>{{ "phoneNumber" | translate }}</mat-label>
               <input matInput type="text" formControlName="phoneNumber" />
             </mat-form-field>
           </div>
@@ -139,7 +141,7 @@
       color="primary"
       [disabled]="applicationForm.invalid"
     >
-      Submit
+      {{ "submit" | translate }}
     </button>
   </form>
 </div>
