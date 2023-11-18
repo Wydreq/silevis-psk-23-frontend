@@ -33,6 +33,9 @@
         <a [routerLink]="['/admin/interships-dates']">{{
           "internDates" | translate
         }}</a>
+        <a [routerLink]="['/admin/request-new-dates']">{{
+          "request-new-dates" | translate
+        }}</a>
       </div>
     </div>
     <a *ngIf="user" (click)="logoutHandler()">{{ "logout" | translate }}</a>
