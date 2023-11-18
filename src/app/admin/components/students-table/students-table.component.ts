@@ -63,7 +63,9 @@ export class StudentsTableComponent implements AfterViewInit {
     const dialogRef = this.dialog.open(AddNewStudentFormComponent, {
       width: '40%',
     });
-    dialogRef.afterClosed().subscribe((result: FormGroup) => {});
+    dialogRef.afterClosed().subscribe((result: FormGroup) => {
+      location.reload();
+    });
   }
 
   ngOnInit() {

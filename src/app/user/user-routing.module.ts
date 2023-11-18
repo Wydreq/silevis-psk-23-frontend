@@ -10,21 +10,25 @@ const routes: Routes = [
     path: '',
     component: UserComponent,
     pathMatch: 'full',
+    data: { animation: 'user' },
   },
   {
     path: 'passing-intership',
     component: PassingIntershipFormComponent,
     pathMatch: 'full',
+    data: { animation: 'intern' },
   },
   {
     path: 'date-of-practise',
     component: DateOfPractiseComponent,
     pathMatch: 'full',
+    data: { animation: 'date' },
   },
   {
     path: 'application-for-intership',
     component: ApplicationForInternFormComponent,
     pathMatch: 'full',
+    data: { animation: 'app' },
   },
 ];
 

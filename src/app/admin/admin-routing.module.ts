@@ -9,21 +9,25 @@ const routes: Routes = [
     path: '',
     redirectTo: 'students-list',
     pathMatch: 'full',
+    data: { animation: 'list' },
   },
   {
     path: 'students-list',
     component: StudentsTableComponent,
     pathMatch: 'full',
+    data: { animation: 'list-student' },
   },
   {
     path: 'interships-dates',
     component: IntershipDatesComponent,
     pathMatch: 'full',
+    data: { animation: 'intern-date' },
   },
   {
     path: 'request-new-dates',
     component: RequestNewDatesComponent,
     pathMatch: 'full',
+    data: { animation: 'req-new-date' },
   },
 ];
 

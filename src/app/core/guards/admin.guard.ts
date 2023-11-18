@@ -28,7 +28,7 @@ export class AdminGuard implements CanActivate {
         if (user?.staffStatus === 2) {
           return true;
         }
-        return this.router.createUrlTree(['/student']);
+        return false;
       })
     );
   }
