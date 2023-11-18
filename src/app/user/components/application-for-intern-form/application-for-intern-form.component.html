@@ -94,23 +94,12 @@
         <div class="formItem" style="width: 100%">
           <mat-form-field>
             <mat-label>{{ "internshipDate" | translate }}</mat-label>
-            <mat-date-range-input [rangePicker]="picker">
-              <input
-                matStartDate
-                placeholder="Start date"
-                formControlName="internStartDate"
-              />
-              <input
-                matEndDate
-                placeholder="End date"
-                formControlName="internEndDate"
-              />
-            </mat-date-range-input>
-            <mat-datepicker-toggle
-              matIconSuffix
-              [for]="picker"
-            ></mat-datepicker-toggle>
-            <mat-date-range-picker #picker></mat-date-range-picker>
+            <mat-select formControlName="internDateRange">
+              <mat-option *ngFor="let date of dates" value="date.id"
+                >{{ date.startDate | date }} -
+                {{ date.endDate | date }}</mat-option
+              >
+            </mat-select>
           </mat-form-field>
         </div>
       </div>

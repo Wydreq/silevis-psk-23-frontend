@@ -3,6 +3,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { dataMock } from '../../mockData';
+import { MatDialog } from '@angular/material/dialog';
+import { AddNewStudentFormComponent } from './add-new-student-form/add-new-student-form.component';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-students-table',
@@ -32,7 +35,7 @@ export class StudentsTableComponent implements AfterViewInit {
     'actions',
   ];
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     this.dataSource = new MatTableDataSource(dataMock);
   }
 
@@ -43,5 +46,12 @@ export class StudentsTableComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddNewStudentFormComponent, {
+      width: '40%',
+    });
+    dialogRef.afterClosed().subscribe((result: FormGroup) => {});
   }
 }

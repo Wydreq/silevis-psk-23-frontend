@@ -1,5 +1,15 @@
 <h1 style="color: white">{{ "studentList" | translate }}</h1>
 
+<button
+  mat-raised-button
+  class="demo-button"
+  color="primary"
+  style="margin-bottom: 10px; color: white"
+  (click)="openDialog()"
+>
+  Add student
+</button>
+
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
     <ng-container matColumnDef="nr_albumu">

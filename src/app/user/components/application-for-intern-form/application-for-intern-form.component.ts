@@ -6,6 +6,7 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
 import pdfMake from 'pdfmake/build/pdfmake';
 import { contractInternship } from '../../templates/contract-internship-pdf';
 import { UserService } from 'src/app/core/user.service';
+import { ManageDatesService } from 'src/app/admin/services/manage-dates.service';
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -16,10 +17,12 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 })
 export class ApplicationForInternFormComponent implements OnInit {
   protected applicationForm: FormGroup;
+  protected dates: any;
 
   constructor(
     private companyService: CompanyService,
-    private userService: UserService
+    private userService: UserService,
+    private manageDatesService: ManageDatesService
   ) {
     (pdfMake as any).fonts = {
       times: {
@@ -35,6 +38,13 @@ export class ApplicationForInternFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initForm();
+    this.manageDatesService.practisesDates.subscribe((dates) => {
+      this.dates = dates;
+    });
+  }
+
+  initForm() {
     this.applicationForm = new FormGroup({
       agreementDate: new FormControl(null, Validators.required),
       department: new FormControl(null, Validators.required),
@@ -50,8 +60,7 @@ export class ApplicationForInternFormComponent implements OnInit {
         regon: new FormControl(null, Validators.required),
         companyRepresentedBy: new FormControl(null, Validators.required),
       }),
-      internStartDate: new FormControl(null, Validators.required),
-      internEndDate: new FormControl(null, Validators.required),
+      internDateRange: new FormControl(null, Validators.required),
       companySupervisorContact: new FormGroup({
         phoneNumber: new FormControl(null, Validators.required),
         emailAddress: new FormControl(null, [
