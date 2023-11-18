@@ -84,7 +84,7 @@ export class ApplicationForInternFormComponent implements OnInit {
       });
   }
 
-  generatePDF(passFormValues: any, attestationFormValues: any) {
+  prepareDocument() {
     const html = htmlToPdfmake(
       contractInternship(
         this.applicationForm.value,
@@ -95,9 +95,18 @@ export class ApplicationForInternFormComponent implements OnInit {
     const documentDefinition = {
       content: html, ///htm
     };
-
-    pdfMake.createPdf(documentDefinition).download('zalacznikNr4.pdf');
+    return documentDefinition;
   }
 
-  submitHandler() {}
+  generatePDF() {
+    pdfMake.createPdf(this.prepareDocument()).download('zalacznikNr4.pdf');
+  }
+
+  printSubmit() {
+    pdfMake.createPdf(this.prepareDocument()).print();
+  }
+
+  submitHandler() {
+    this.generatePDF();
+  }
 }

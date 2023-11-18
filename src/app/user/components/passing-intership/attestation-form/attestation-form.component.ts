@@ -10,6 +10,9 @@ import { IAttestationFormValues } from 'src/app/user/interfaces/form.interfaces'
 export class AttestationFormComponent implements OnInit {
   @Output() attestationFormSubmitHandler =
     new EventEmitter<IAttestationFormValues>();
+
+  @Output() printPdf = new EventEmitter<IAttestationFormValues>();
+
   protected attestationForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
@@ -36,6 +39,10 @@ export class AttestationFormComponent implements OnInit {
 
   protected submitHandler() {
     this.attestationFormSubmitHandler.emit(this.attestationForm.value);
+  }
+
+  protected submitPrintPdf() {
+    this.printPdf.emit(this.attestationForm.value);
   }
 
   private createAttestationForm() {

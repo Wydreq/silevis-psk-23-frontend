@@ -141,5 +141,14 @@
     >
       Submit
     </button>
+
+    <button
+      (click)="printSubmit()"
+      mat-flat-button
+      color="accent"
+      [disabled]="applicationForm.invalid"
+    >
+      Print Pdf
+    </button>
   </form>
 </div>
