@@ -7,6 +7,8 @@ import pdfMake from 'pdfmake/build/pdfmake';
 import { contractInternship } from '../../templates/contract-internship-pdf';
 import { UserService } from 'src/app/core/user.service';
 import { ManageDatesService } from 'src/app/admin/services/manage-dates.service';
+import { TranslateService } from '@ngx-translate/core';
+import { contractInternshipEn } from '../../templates/contractIntershipEn';
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -22,7 +24,8 @@ export class ApplicationForInternFormComponent implements OnInit {
   constructor(
     private companyService: CompanyService,
     private userService: UserService,
-    private manageDatesService: ManageDatesService
+    private manageDatesService: ManageDatesService,
+    private translate: TranslateService
   ) {
     (pdfMake as any).fonts = {
       times: {
@@ -39,8 +42,10 @@ export class ApplicationForInternFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
+    this.manageDatesService.getDates();
     this.manageDatesService.practisesDates.subscribe((dates) => {
       this.dates = dates;
+      console.log(dates);
     });
   }
 
@@ -108,7 +113,11 @@ export class ApplicationForInternFormComponent implements OnInit {
   }
 
   prepareDocument() {
-    const html = htmlToPdfmake(contractInternship(this.applicationForm.value));
+    const html = htmlToPdfmake(
+      this.translate.currentLang === 'pl'
+        ? contractInternship(this.applicationForm.value)
+        : contractInternshipEn(this.applicationForm.value)
+    );
 
     const documentDefinition = {
       defaultStyle: {

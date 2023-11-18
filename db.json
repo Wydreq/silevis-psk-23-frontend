@@ -47,131 +47,6 @@
       "requestNewDateRange": null,
       "acceptedRequest": "empty",
       "adminId": "36295"
-    },
-    {
-      "nr_albumu": "dfs",
-      "surname": "dsfds",
-      "firstname": "dsfds",
-      "email": "fdsfds",
-      "practiseMonth": "fdsfds",
-      "practiseDateRange": "fdsfds",
-      "company": "fdsfdsfds",
-      "address": "fdsfds",
-      "phone": "fdsfds",
-      "passed": true,
-      "id": "op8EQ6S"
-    },
-    {
-      "nr_albumu": "",
-      "surname": "sadsa",
-      "firstname": "",
-      "email": "sadsa",
-      "practiseMonth": "",
-      "practiseDateRange": "",
-      "company": "sadsa",
-      "address": "dsasa",
-      "phone": "asdad",
-      "passed": false,
-      "adminId": "36294",
-      "id": "sa1CsHL"
-    },
-    {
-      "nr_albumu": "",
-      "surname": "sadsa",
-      "firstname": "",
-      "email": "sadsa",
-      "practiseMonth": "",
-      "practiseDateRange": "",
-      "company": "sadsa",
-      "address": "dsasa",
-      "phone": "asdad",
-      "passed": false,
-      "adminId": "36294",
-      "id": "N35qbUr"
-    },
-    {
-      "nr_albumu": "",
-      "surname": "",
-      "firstname": "sdds",
-      "email": "dsfs",
-      "practiseMonth": "sdfs",
-      "practiseDateRange": "dsff",
-      "company": "sdfs",
-      "address": "dsff",
-      "phone": "",
-      "passed": true,
-      "adminId": "36295",
-      "id": "GtUEHnU"
-    },
-    {
-      "nr_albumu": "",
-      "surname": "",
-      "firstname": "cdsc",
-      "email": "",
-      "practiseMonth": "",
-      "practiseDateRange": "sdcsd",
-      "company": "",
-      "address": "",
-      "phone": "",
-      "passed": true,
-      "adminId": "36295",
-      "id": "xysni0z"
-    },
-    {
-      "nr_albumu": "",
-      "surname": "",
-      "firstname": "sds",
-      "email": "",
-      "practiseMonth": "",
-      "practiseDateRange": "",
-      "company": "dsfds",
-      "address": "",
-      "phone": "",
-      "passed": false,
-      "adminId": "36293",
-      "id": "3B941_g"
-    },
-    {
-      "nr_albumu": "",
-      "surname": "",
-      "firstname": "ffdgf",
-      "email": "",
-      "practiseMonth": "",
-      "practiseDateRange": "",
-      "company": "",
-      "address": "",
-      "phone": "",
-      "passed": true,
-      "adminId": "36295",
-      "id": "pjhWM3n"
-    },
-    {
-      "nr_albumu": "111111",
-      "surname": "11111",
-      "firstname": "111111",
-      "email": "111111",
-      "practiseMonth": "111111",
-      "practiseDateRange": "1111111",
-      "company": "1111111",
-      "address": "1111111",
-      "phone": "1111111",
-      "passed": true,
-      "adminId": "36295",
-      "id": "C6o6j59"
-    },
-    {
-      "nr_albumu": "111111",
-      "surname": "11111",
-      "firstname": "111111",
-      "email": "111111",
-      "practiseMonth": "111111",
-      "practiseDateRange": "1111111",
-      "company": "1111111",
-      "address": "1111111",
-      "phone": "1111111",
-      "passed": false,
-      "adminId": "36295",
-      "id": "qomo36C"
     }
   ],
   "admins": [
@@ -200,6 +75,14 @@
       },
       "requestEndDate": "2023-11-29T23:00:00.000Z",
       "id": 3
+    },
+    {
+      "range": {
+        "start": "2023-11-08T23:00:00.000Z",
+        "end": "2023-11-22T23:00:00.000Z"
+      },
+      "requestEndDate": "2023-11-15T23:00:00.000Z",
+      "id": 4
     }
   ]
 }

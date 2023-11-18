@@ -96,8 +96,8 @@
             <mat-label>{{ "internshipDate" | translate }}</mat-label>
             <mat-select formControlName="internDateRange">
               <mat-option *ngFor="let date of dates" value="date.id"
-                >{{ date.startDate | date }} -
-                {{ date.endDate | date }}</mat-option
+                >{{ date.range.start | date }} -
+                {{ date.range.end | date }}</mat-option
               >
             </mat-select>
           </mat-form-field>
