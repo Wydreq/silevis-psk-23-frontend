@@ -2,5 +2,15 @@
   "sign": "Zaloguj się!",
   "login": "Zaloguj",
   "email": "Adres email",
-  "chooseAction": "Wybierz akcje"
+  "chooseAction": "Wybierz akcje",
+  "studentList": "Lista studentów",
+  "surname": "Nazwisko",
+  "name": "Imię",
+  "index": "Numer albumu",
+  "practices": "Praktyki",
+  "deadline": "Termin",
+  "company": "Firma",
+  "phone": "Telefon",
+  "pass": "Zaliczone",
+  "actions": "Akcje"
 }
