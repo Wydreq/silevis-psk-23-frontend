@@ -9,6 +9,7 @@ import { IntershipDatesComponent } from './components/intership-dates/intership-
 import { AddInteshipDateModalComponent } from './components/add-inteship-date-modal/add-inteship-date-modal.component';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { RequestNewDatesComponent } from './components/request-new-dates/request-new-dates.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { TranslateModule } from '@ngx-translate/core';
     StudentsTableComponent,
     IntershipDatesComponent,
     AddInteshipDateModalComponent,
+    RequestNewDatesComponent,
   ],
   imports: [
     CommonModule,
