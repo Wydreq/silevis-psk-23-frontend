@@ -40,5 +40,14 @@
   "internBase": "Podaj podstawe praktyki (na podstawie (wpisać jedną z sytuacji określoną w § 6 ust. 10 Regulaminu praktyk zawodowych) )",
   "partTime": "Zaoczne",
   "stationary": "Stacjonarne",
-  "next": "Dalej"
+  "next": "Dalej",
+  "studentsInternCompanyName": "Nazwa instytucji/zakładu, w której pracuje/pracował student:",
+  "workingHours": "Czas pracy",
+  "responsibilities": "Zakres obowiązków",
+  "businessProfile": "Profil działalności",
+  "companyConfirmingPerson": "Dane osoby, która może poświadczyć prawdziwość powyższych danych (prezes, dyrektor, Koordynator Programu Badawczego/Erasmusa, itp.) wraz z podpisem",
+  "studentPosition": "Stanowisko studenta w czasie pracy",
+  "additionalComments": "Uwagi dodatkowe",
+  "download": "Pobierz wnioski",
+  "print": "Drukuj"
 }

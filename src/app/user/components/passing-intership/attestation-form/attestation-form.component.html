@@ -3,65 +3,42 @@
     <div class="formItem">
       <p>
         <mat-form-field appearance="fill">
-          <mat-label
-            >Nazwa instytucji/zakładu, w której pracuje/pracował
-            student:</mat-label
-          >
-          <input
-            matInput
-            placeholder="Placeholder"
-            formControlName="companyName"
-          />
+          <mat-label>{{ "studentsInternCompanyName" | translate }}</mat-label>
+          <input matInput formControlName="companyName" />
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="fill">
-          <mat-label>Adres</mat-label>
-          <input
-            matInput
-            placeholder="Placeholder"
-            formControlName="companyAddress"
-          />
+          <mat-label>{{ "address" | translate }}</mat-label>
+          <input matInput formControlName="companyAddress" />
         </mat-form-field>
       </p>
 
       <p>
         <mat-form-field appearance="fill">
-          <mat-label>Profil działalności</mat-label>
-          <input
-            matInput
-            placeholder="Placeholder"
-            formControlName="companyProfile"
-          />
+          <mat-label>{{ "Business profile" | translate }}</mat-label>
+          <input matInput formControlName="companyProfile" />
         </mat-form-field>
       </p>
 
       <p>
         <mat-form-field appearance="fill">
-          <mat-label>Stanowisko studenta w czasie pracy</mat-label>
-          <input
-            matInput
-            placeholder="Placeholder"
-            formControlName="workStation"
-          />
+          <mat-label>{{ "studentPosition" | translate }}</mat-label>
+          <input matInput formControlName="workStation" />
         </mat-form-field>
       </p>
     </div>
     <div class="formItem">
       <p>
         <mat-form-field appearance="fill">
-          <mat-label>Czas pracy</mat-label>
-          <input
-            matInput
-            placeholder="Placeholder"
-            formControlName="workTime"
-          />
+          <mat-label>{{ "workingHours" | translate }}</mat-label>
+          <input matInput formControlName="workTime" />
         </mat-form-field>
       </p>
 
       <p>
         <mat-form-field>
-          <mat-label>Zakres obowiązków studenta w czasie pracy </mat-label>
+          <mat-label>{{ "responsibilities" | translate }}</mat-label>
           <textarea
             formControlName="practicesBase"
             formControlName="studentResponsibilities"
@@ -72,35 +49,33 @@
       <p>
         <mat-form-field appearance="fill">
           <mat-label>
-            Dane osoby, która może poświadczyć prawdziwość powyższych danych
-            (prezes, dyrektor, Koordynator Programu Badawczego/Erasmusa, itp.)
-            wraz z podpisem
+            {{ "companyConfirmingPerson" | translate }}
           </mat-label>
-          <input
-            formControlName="studentSuperviser"
-            matInput
-            placeholder="Placeholder"
-          />
+          <input formControlName="studentSuperviser" matInput />
         </mat-form-field>
       </p>
       <p>
         <mat-form-field>
-          <mat-label>Uwagi </mat-label>
+          <mat-label>{{ "additionalComments" | translate }}</mat-label>
           <textarea formControlName="comments" matInput></textarea>
         </mat-form-field>
       </p>
     </div>
   </div>
-  <button type="submit" mat-flat-button style="background-color: #ef7a1b">
-    Submit
+  <button
+    type="submit"
+    mat-flat-button
+    style="background-color: #ef7a1b; color: white"
+  >
+    {{ "download" | translate }}
   </button>
 
   <button
     type="button"
     mat-flat-button
-    color="primary"
+    style="background-color: #ef7a1b; color: white; margin-top: 20px"
     (click)="submitPrintPdf()"
   >
-    Print PDF
+    {{ "print" | translate }}
   </button>
 </form>
