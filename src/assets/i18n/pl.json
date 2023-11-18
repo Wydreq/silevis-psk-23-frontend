@@ -13,7 +13,7 @@
   "company": "Firma",
   "phone": "Telefon",
   "pass": "Zaliczone",
-  "actions": "Akcje"
+  "actions": "Akcje",
 
   "logout": "Wyloguj",
   "applicationForPractice": "Podanie o praktykę",
@@ -41,5 +41,4 @@
   "partTime": "Zaoczne",
   "stationary": "Stacjonarne",
   "next": "Dalej"
-
 }
