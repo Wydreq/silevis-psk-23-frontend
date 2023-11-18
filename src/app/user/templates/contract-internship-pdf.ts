@@ -1,6 +1,6 @@
 import { IUser } from 'src/app/shared/interface/user.interface';
 
-export function contractInternship(formValues: any, user: IUser | null) {
+export function contractInternship(formValues: any) {
   return `<div style="margin:0;display:flex; width:100vw; justify-content: flex-end; text-align: right">
     <div style="width:50px;  font-weight: bold; font-size:10px;">
         <div>Załącznik nr 1 do Zarządzenia Nr 54/19

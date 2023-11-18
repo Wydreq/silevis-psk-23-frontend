@@ -21,7 +21,7 @@ export function traineeApplication({
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<div style="display:flex; width:100vw; justify-content: flex-end; text-align: right">
+<div style="display:flex; width:100vw; justify-content: flex-end; text-align: right;  ">
     <div style="width:50px;  font-weight: bold">
         <div>Załącznik nr 4 do Zarządzenia Nr 54/19
          <div>Rektora Politechniki Świętokrzyskiej z dnia 20 września 2019 r </div></div>

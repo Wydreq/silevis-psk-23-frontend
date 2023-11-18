@@ -25,7 +25,7 @@ export class ApplicationForInternFormComponent implements OnInit {
       times: {
         normal:
           'https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.ttf',
-        bold: 'https://db.onlinewebfonts.com/t/9ddfee5c410187b783c0be8d068a8273.ttf',
+        bold: 'https://db.onlinewebfonts.com/t/f3a3df668a6b2982e99096657b8dba7f.ttf',
         italics:
           'https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.ttf',
         bolditalics:
@@ -99,16 +99,11 @@ export class ApplicationForInternFormComponent implements OnInit {
   }
 
   prepareDocument() {
-    const html = htmlToPdfmake(
-      contractInternship(
-        this.applicationForm.value,
-        this.userService.user.getValue()
-      )
-    );
+    const html = htmlToPdfmake(contractInternship(this.applicationForm.value));
 
     const documentDefinition = {
       defaultStyle: {
-        font: 'times', // Ustaw nazwę lokalnej czcionki
+        font: 'times',
       },
       content: html,
     };
