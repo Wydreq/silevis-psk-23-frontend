@@ -1,4 +1,4 @@
-<h1>{{ "studentList" | translate }}</h1>
+<h1 style="color: white">{{ "studentList" | translate }}</h1>
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
@@ -79,7 +79,7 @@
           color="warn"
           (click)="pass(element.nr_albumu)"
         >
-          Zalicz praktykę
+          {{ "passInternship" | translate }}
         </button>
       </td>
     </ng-container>

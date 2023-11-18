@@ -55,5 +55,16 @@
   "bia": "Construction and Architecture",
   "mibm": "Mechatronics and Machine Construction",
   "isge": "Environmental Engineering, Geodesy and Renewable Energy",
-  "zimk": "Management and Computer Modeling"
+  "zimk": "Management and Computer Modeling",
+
+  "studentsList": "Students list",
+  "internDates": "Intern dates",
+
+  "internStartDate": "Internship start date",
+  "internEndDate": "Internship end date",
+  "applicationEndDate": "Application end date",
+  "deleting": "Deleting",
+  "edit": "Edit",
+
+  "passInternship": "Pass internship"
 }
