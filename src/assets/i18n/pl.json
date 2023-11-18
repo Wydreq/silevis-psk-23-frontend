@@ -55,5 +55,16 @@
   "bia": "Budownictwa i Architektury",
   "mibm": "Mechatroniki i Budowy Maszyn",
   "isge": "Inżynierii Środowiska, Geodezji i Energetyki Odnawialnej",
-  "zimk": "Zarządzania i Modelowania Komputerowego"
+  "zimk": "Zarządzania i Modelowania Komputerowego",
+
+  "studentsList": "Lista studentów",
+  "internDates": "Daty praktyk",
+
+  "internStartDate": "Data rozpoczęcia praktyk",
+  "internEndDate": "Data zakończenia praktyk",
+  "applicationEndDate": "Data zakończenia zgłoszeń",
+  "deleting": "Usuwanie",
+  "edit": "Edycja",
+
+  "passInternship": "Zalicz praktykę"
 }

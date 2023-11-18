@@ -25,10 +25,10 @@ export class StudentGuard implements CanActivate {
     | Observable<boolean | UrlTree> {
     return this.userService.user.pipe(
       map((user) => {
-        if (user?.studentNumber) {
+        if (user?.studentStatus === 2) {
           return true;
         }
-        return this.router.createUrlTree(['/supervisor']);
+        return this.router.createUrlTree(['/admin']);
       })
     );
   }

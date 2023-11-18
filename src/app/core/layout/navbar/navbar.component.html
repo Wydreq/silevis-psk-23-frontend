@@ -18,13 +18,21 @@
       <a routerLink="/" class="dropbtn"
         >{{ user.firstName }} {{ user.lastName }}</a
       >
-      <div class="dropdown-content">
-        <a [routerLink]="['/student/application-for-intership']"
-          >Podanie o praktykę</a
-        >
-        <a [routerLink]="['/student/passing-intership']"
-          >Podanie o zaliczenie praktyki</a
-        >
+      <div class="dropdown-content" *ngIf="user.studentStatus === 2">
+        <a [routerLink]="['/student/application-for-intership']">{{
+          "applicationForPractice" | translate
+        }}</a>
+        <a [routerLink]="['/student/passing-intership']">{{
+          "applicationForPracticeApprove" | translate
+        }}</a>
+      </div>
+      <div class="dropdown-content" *ngIf="user.staffStatus === 2">
+        <a [routerLink]="['/admin/students-list']">{{
+          "studentsList" | translate
+        }}</a>
+        <a [routerLink]="['/admin/interships-dates']">{{
+          "internDates" | translate
+        }}</a>
       </div>
     </div>
     <a *ngIf="user" (click)="logoutHandler()">{{ "logout" | translate }}</a>

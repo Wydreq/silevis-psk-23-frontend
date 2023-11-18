@@ -1,4 +1,4 @@
-import { UserService } from './../user.service';
+import { UserService } from '../user.service';
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
@@ -12,7 +12,7 @@ import { map, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class SupervisorGuard implements CanActivate {
+export class AdminGuard implements CanActivate {
   constructor(private userService: UserService, private router: Router) {}
 
   canActivate(
